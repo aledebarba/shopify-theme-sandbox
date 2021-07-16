@@ -1,9 +1,9 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Dawn",
-    "theme_version": "1.1.0",
-    "theme_author": "Shopify",
+    "theme_name": "Smallmans - based on dawn",
+    "theme_version": "1.0.0",
+    "theme_author": "ale@getuserto.com",
     "theme_documentation_url": "https://shopify.dev/themes/tools/dawn",
     "theme_support_url": "https://support.shopify.com/"
   },
@@ -24,14 +24,14 @@
       {
         "type": "color",
         "id": "colors_accent_1",
-        "default": "#445958",
+        "default": "#EE2B24",
         "label": "t:settings_schema.colors.settings.colors_accent_1.label",
         "info": "t:settings_schema.colors.settings.colors_accent_1.info"
       },
       {
         "type": "color",
         "id": "colors_accent_2",
-        "default": "#9D572C",
+        "default": "#163372",
         "label": "t:settings_schema.colors.settings.colors_accent_2.label"
       },
       {
@@ -41,14 +41,14 @@
       {
         "type": "color",
         "id": "colors_text",
-        "default": "#1A1B18",
+        "default": "#163372",
         "label": "t:settings_schema.colors.settings.colors_text.label",
         "info": "t:settings_schema.colors.settings.colors_text.info"
       },
       {
         "type": "color",
         "id": "colors_outline_button_labels",
-        "default": "#445958",
+        "default": "#FFFFFF",
         "label": "t:settings_schema.colors.settings.colors_outline_button_labels.label",
         "info": "t:settings_schema.colors.settings.colors_outline_button_labels.info"
       },
@@ -61,7 +61,7 @@
       {
         "type": "color",
         "id": "colors_background_2",
-        "default": "#FAF1E9",
+        "default": "#C1D1F2",
         "label": "t:settings_schema.colors.settings.colors_background_2.label"
       }
     ]
@@ -76,7 +76,7 @@
       {
         "type": "font_picker",
         "id": "type_header_font",
-        "default": "sans-serif",
+        "default": "nunito_n9",
         "label": "t:settings_schema.typography.settings.type_header_font.label",
         "info": "t:settings_schema.typography.settings.type_header_font.info"
       },
@@ -87,7 +87,7 @@
       {
         "type": "font_picker",
         "id": "type_body_font",
-        "default": "sans-serif",
+        "default": "nunito_n4",
         "label": "t:settings_schema.typography.settings.type_body_font.label",
         "info": "t:settings_schema.typography.settings.type_body_font.info"
       }
