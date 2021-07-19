@@ -1,0 +1,23 @@
+:root {
+	--smallmans-duration: 15s;
+}
+
+.smallmans__section {
+	width: 100vw;
+  	background-color: #EFF6F9;
+  
+  	h1 {
+   		font-size: 2rem;
+    }
+  
+  	h2 {
+		font-size: 1rem;
+  	}
+  
+  	h3 {
+    	font-size: 0.8rem;
+      	text-transform: uppercase;
+      	font-weight: bold;
+    }
+  	
+}
