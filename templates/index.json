@@ -1,9 +1,8 @@
 {
   "sections": {
     "flickity-slider": {
-      "type":"flickity-header-carousel",
+      "type": "flickity-header-carousel",
       "settings": {
-        "title":"Hero header carousel"
       }
     },
     "featured_products": {
