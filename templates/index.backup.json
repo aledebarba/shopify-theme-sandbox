@@ -1,9 +1,35 @@
 {
   "sections": {
-    "flickity-slider": {
-      "type":"flickity-header-carousel",
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "All Collections",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "Search",
+            "button_link_2": "https://google.com",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ],
       "settings": {
-        "title":"Hero header carousel"
+        "desktop_text_box_position": "flex-end",
+        "color_scheme": "background-1",
+        "stack_images_on_mobile": true,
+        "adapt_height_first_image": false
       }
     },
     "featured_products": {
@@ -56,7 +82,7 @@
     }
   },
   "order": [
-    "flickity-slider",
+    "image_banner",
     "featured_products",
     "image_text"
   ]

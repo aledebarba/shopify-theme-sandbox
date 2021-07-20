@@ -75,7 +75,7 @@
 
 {% schema %}
 {
-  "name": "t:sections.featured-collection.name",
+  "name": "collection-slider",
   "tag": "section",
   "class": "spaced-section",
   "settings": [
@@ -93,10 +93,10 @@
     {
       "type": "range",
       "id": "products_to_show",
-      "min": 2,
+      "min": 3,
       "max": 12,
-      "step": 2,
-      "default": 4,
+      "step": 3,
+      "default": 3,
       "label": "t:sections.featured-collection.settings.products_to_show.label"
     },
     {
@@ -156,7 +156,7 @@
   ],
   "presets": [
     {
-      "name": "smallmans featured collection slider"
+      "name": "collection-slider"
     }
   ]
 }
