@@ -2,17 +2,17 @@
     --smallmans-duration: 300ms;
 }
 
-section.smallmans {
+.smallmans {
     h1 {
-        font-size: 2rem;
+        font-size: 3em;
     }
 
     h2 {
-        font-size: 1rem;
+        font-size: 2em;
     }
 
     h3 {
-        font-size: 0.8rem;
+        font-size: 1em;
         text-transform: uppercase;
         font-weight: bold;        
     }
@@ -21,12 +21,13 @@ section.smallmans {
         font-size: 0.8rem;
         text-transform: uppercase;
     }
+
     small {
         font-size: 0.8rem
     }
 
     p { 
-        font-size: 1rem;
+        font-size: 1em;
         font-weight: normal;
     }
 
@@ -34,4 +35,81 @@ section.smallmans {
         font-size: 1rem;
         font-weight: bold;
     }
+        
+    button {
+            border-radius: 8px;
+            outline: 0px solid transparent;
+            border: 0px solid transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1em;
+            font-weight: bold;
+            padding: 12px 24px;
+            transition: all var(--smallmans-duration) linear;
+    }
+
+    button.primary {
+        background-color: RGB(var(--color-base-accent-1));
+        color: white;
+    }
+    button.secondary {
+        background-color: RGBA(var(--color-base-accent-2));
+        color: white;
+    }
+    button.outline { 
+        background-color: transparent;
+        border: 2px solid RGB(var(--color-base-accent-1));
+        color: RGB(var(--color-base-accent-1));
+    }
+    button.outline.invert {
+        background-color: transparent;
+        border: 2px  solid white;
+        color: white;
+    }
+    button:hover {
+        box-shadow: 0px 0px 5px 0px #0008;
+        transition: all var(--smallmans-duration) linear;
+    }
+    button.small { 
+        font-size: 0.7em;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 8px 16px;
+    }
+    button.large {
+        font-size: 1.2rem;
+        padding: 20px 32px;
+    }
+        
+    &__header-hero {        
+        margin: 16px;
+        .flickity-hero-carousel {
+            width: 100%;
+            min-height: 80vh;
+            .slide {
+                width: 100%;
+                display: flex;
+                flex: 1 1 0;
+
+                &__product-image {
+                    width: 50%;
+                    min-width: 280px;
+                    min-height: 280px;
+                    border: 1px solid red;
+                    padding: 16px;
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                &__text-content {
+                    padding: 16px;                    
+                    width: 50%;
+
+                }
+            }    
+        }
+    }
 }
+

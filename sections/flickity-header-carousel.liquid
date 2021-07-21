@@ -1,7 +1,6 @@
-<div class='smallmans__header-hero'>
+<div class='smallmans smallmans__header-hero'>
   <div class='flickity-hero-carousel'>
-    <div class='smallmans__slide-content'>
-      <div class='slide__background'>
+      <div class='slide'>
         <div class='slide__product-image'>
           <img src='{{ "product-placeholder-image.png" | asset_img_url:"medium" }}' alt='product best visual representation' />
         </div>
@@ -9,10 +8,10 @@
           <h1>The product title</h1>
           <h2>The product subtitle and short description</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eligendi quas quisquam recusandae id vero tempore eveniet sint saepe incidunt?</p>
-          <button class='smallmans__button-primary'>Read More</button>
+          <button class='primary small'>Read More</button>
         </div>
       </div>
-      <div class='slide__background'>
+      <div class='slide'>
         <div class='slide__product-image'>
          <img src='{{ "product-placeholder-image.png" | asset_img_url:"medium" }}' alt='product best visual representation' />
         </div>
@@ -20,10 +19,10 @@
           <h1>The product title</h1>
           <h2>The product subtitle and short description</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eligendi quas quisquam recusandae id vero tempore eveniet sint saepe incidunt?</p>
-          <button class='smallmans__button-primary'>Read More</button>
+          <button class='primary'>Read More</button>
         </div>
       </div>
-      <div class='slide__background'>
+      <div class='slide'>
         <div class='slide__product-image'>
           <img src='{{ "product-placeholder-image.png" | asset_img_url:"medium" }}' alt='product best visual representation' />
         </div>
@@ -31,10 +30,10 @@
           <h1>The product title</h1>
           <h2>The product subtitle and short description</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eligendi quas quisquam recusandae id vero tempore eveniet sint saepe incidunt?</p>
-          <button class='smallmans__button-primary'>Read More</button>
+          <button class='primary'>Read More</button>
         </div>
       </div>
-      <div class='slide__background'>
+      <div class='slide'>
         <div class='slide__product-image'>
           <img src='{{ "product-placeholder-image.png" | asset_img_url:"medium" }}' alt='product best visual representation' />
         </div>
@@ -42,9 +41,8 @@
           <h1>The product title</h1>
           <h2>The product subtitle and short description</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eligendi quas quisquam recusandae id vero tempore eveniet sint saepe incidunt?</p>
-          <button class='smallmans__button-primary'>Read More</button>
+          <button class='primary'>Read More</button>
         </div>
-      </div>
     </div>
   </div>
 </div>
@@ -54,7 +52,7 @@
 {
   "name":"flickity-header-carousel",
   "tag": "section",
-  "class": "smalmans__flickity__header-hero",
+  "class": "smallmans__theme",
   "settings": [
       {
         "type": "collection",
@@ -84,3 +82,11 @@
   ]
 }
 {% endschema %}
+
+{% javascript %}
+  var elem = document.querySelector('.flickity-hero-carousel');
+  var flkty = new Flickity( elem, {
+    cellAlign: 'left',
+    contain: true
+  });
+{% endjavascript %}
