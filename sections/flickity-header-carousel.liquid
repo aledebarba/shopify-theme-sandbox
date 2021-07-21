@@ -1,49 +1,17 @@
 <div class='smallmans smallmans__header-hero'>
   <div class='flickity-hero-carousel'>
+  {% for product in section.settings.collection.products %}
       <div class='slide'>
         <div class='slide__product-image'>
-          <img src='{{ "product-placeholder-image.png" | asset_img_url:"medium" }}' alt='product best visual representation' />
+          {{ product | img_url: "800x800" | img_tag }}
         </div>
         <div class='slide__text-content'>
-          <h1>The product title</h1>
-          <h2>The product subtitle and short description</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eligendi quas quisquam recusandae id vero tempore eveniet sint saepe incidunt?</p>
+          <h1>{{ product.title }}</h1>
+          <p>{{ product.description }}</p>
           <button class='primary small'>Read More</button>
         </div>
       </div>
-      <div class='slide'>
-        <div class='slide__product-image'>
-         <img src='{{ "product-placeholder-image.png" | asset_img_url:"medium" }}' alt='product best visual representation' />
-        </div>
-        <div class='slide__text-content'>
-          <h1>The product title</h1>
-          <h2>The product subtitle and short description</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eligendi quas quisquam recusandae id vero tempore eveniet sint saepe incidunt?</p>
-          <button class='primary'>Read More</button>
-        </div>
-      </div>
-      <div class='slide'>
-        <div class='slide__product-image'>
-          <img src='{{ "product-placeholder-image.png" | asset_img_url:"medium" }}' alt='product best visual representation' />
-        </div>
-        <div class='slide__text-content'>
-          <h1>The product title</h1>
-          <h2>The product subtitle and short description</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eligendi quas quisquam recusandae id vero tempore eveniet sint saepe incidunt?</p>
-          <button class='primary'>Read More</button>
-        </div>
-      </div>
-      <div class='slide'>
-        <div class='slide__product-image'>
-          <img src='{{ "product-placeholder-image.png" | asset_img_url:"medium" }}' alt='product best visual representation' />
-        </div>
-        <div class='slide__text-content'>
-          <h1>The product title</h1>
-          <h2>The product subtitle and short description</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eligendi quas quisquam recusandae id vero tempore eveniet sint saepe incidunt?</p>
-          <button class='primary'>Read More</button>
-        </div>
-    </div>
+    {% endfor %}
   </div>
 </div>
 
@@ -57,27 +25,7 @@
       {
         "type": "collection",
         "id": "collection",
-        "label": "t:sections.featured-collection.settings.collection.label"
-      },
-      {
-        "type": "select",
-        "id": "image_ratio",
-        "options": [
-          {
-            "value": "adapt",
-            "label": "t:sections.featured-collection.settings.image_ratio.options__1.label"
-          },
-          {
-            "value": "portrait",
-            "label": "t:sections.featured-collection.settings.image_ratio.options__2.label"
-          },
-          {
-            "value": "square",
-            "label": "t:sections.featured-collection.settings.image_ratio.options__3.label"
-          }
-        ],
-        "default": "adapt",
-        "label": "t:sections.featured-collection.settings.image_ratio.label"
+        "label": "Select the collection to show in header carousel"
       }
   ]
 }
