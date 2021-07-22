@@ -16,6 +16,7 @@
 
 .list-menu__item--active {
   text-decoration: underline;
+  text-decoration-color: var(--theme-color--accent);
   text-underline-offset: 0.3rem;
 }
 

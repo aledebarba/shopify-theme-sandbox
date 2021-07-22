@@ -1992,13 +1992,14 @@ details[open] > .header__icon--menu .icon-hamburger {
 }
 
 .header__menu-item {
-  padding: 1.2rem;
+  padding: 1.5rem;
   text-decoration: none;
-  color: rgba(var(--color-foreground), 0.75);
+  font-weight: 800;
+  color: var(--theme-color--secondary);
 }
 
 .header__menu-item:hover {
-  color: rgb(var(--color-foreground));
+  color:  var(--theme-color--secondary);
 }
 
 .header__menu-item span {
@@ -2007,13 +2008,15 @@ details[open] > .header__icon--menu .icon-hamburger {
 
 .header__menu-item:hover span {
   text-decoration: underline;
+  text-decoration-color: var(--theme-color--accent);
   text-underline-offset: 0.3rem;
 }
 
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
-  color: rgb(var(--color-foreground));
+  color: var(--theme-color--secondary);
   text-decoration: underline;
+  text-decoration-color: var(--theme-color--accent);
   text-underline-offset: 0.3rem;
 }
 

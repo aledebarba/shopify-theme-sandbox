@@ -1,5 +1,26 @@
+
 :root { 
     --smallmans-duration: 300ms;
+
+    /* Color styles */
+    --theme-blue-light: #1A4AD1;
+    --theme-blue: #20409A;
+    --theme-blue-dark: #163372;
+    --theme-red: #EE2B24;
+    --theme-orange: #EE4824;
+    --theme-white: #FFFFFF;
+    --theme-gray-bright: #E4E7ED;
+    --theme-gray-warm: #DED9D5;
+    --theme-gray-cold: #EFF6F9;
+    --theme-gray-medium: #727A8B;
+    --theme-gray-dark: #404349;
+    --theme-yellow: #FECA2F;
+
+    --theme-color--primary: var(--theme-red);
+    --theme-color--secondary: var(--theme-blue);
+    --theme-color--accent: var(--theme-orange);
+    --theme-color--text: var(--theme-gray-dark);
+    --theme-color--text-inverse: var(--theme-gray-warm);
 }
 
 .smallmans {
@@ -50,22 +71,23 @@
     }
 
     button.primary {
-        background-color: RGB(var(--color-base-accent-1));
-        color: white;
+        background-color: var(--theme-color--primary);
+        color: var(--theme-color--text-inverse);
     }
     button.secondary {
-        background-color: RGBA(var(--color-base-accent-2));
-        color: white;
+        background-color: var(--theme-color--secondary);
+        color: var(--theme-color--text-inverse);
     }
+
     button.outline { 
         background-color: transparent;
-        border: 2px solid RGB(var(--color-base-accent-1));
-        color: RGB(var(--color-base-accent-1));
+        border: 2px solid var(--theme-color--primary);
+        color: var(--theme-color--primary);
     }
     button.outline.invert {
         background-color: transparent;
-        border: 2px  solid white;
-        color: white;
+        border: 2px  solid -var(--theme-color--text-inverse);
+        color: var(--theme-color--text-inverse);
     }
     button:hover {
         box-shadow: 0px 0px 5px 0px #0008;
@@ -85,10 +107,12 @@
     &__header-hero {        
         margin: 16px;
         .flickity-hero-carousel {
+            background-image: linear-gradient(135deg, white 60%, #4446);
             width: 100%;
             min-height: 80vh;
             .slide {
                 width: 100%;
+                min-height: 80vh;
                 display: flex;
                 flex: 1 1 0;
 
@@ -96,20 +120,55 @@
                     width: 50%;
                     min-width: 280px;
                     min-height: 280px;
-                    border: 1px solid red;
                     padding: 16px;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid red;
                     img {
-                        width: 100%;
+                        width: 80%;
                     }
                 }
 
                 &__text-content {
-                    padding: 16px;                    
+                    padding: 32px 10%;                    
                     width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
 
+                    h1 { 
+                        text-align: center;
+                        font-weight: 800;
+                        text-transform: uppercase;
+                        color: var(--theme-color--secondary);
+                        margin-bottom: 0;
+                    }
+
+                    h2, h2 span { 
+                        text-align: center;
+                        font-weight: normal;
+                        color: var(--theme-blue);
+                    }
+                    
+                    span {
+                        text-align: center;
+                        font-weight: normal;
+                        color: var(--theme-gray-dark);
+                        font-size: 1em;
+                    }
+
+                    button {
+                        margin-top: 32px;
+                    }
                 }
             }    
         }
     }
 }
 
+img.smallmans.header__logo {
+    width: 280px;
+}

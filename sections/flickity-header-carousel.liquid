@@ -7,8 +7,10 @@
         </div>
         <div class='slide__text-content'>
           <h1>{{ product.title }}</h1>
-          <p>{{ product.description }}</p>
-          <button class='primary small'>Read More</button>
+          {{ product.description }}
+          <a href='{{ product.url }}'>
+          <button class='secondary'>Read More</button>
+          </a>
         </div>
       </div>
     {% endfor %}
@@ -18,15 +20,20 @@
 
 {% schema %}
 {
-  "name":"flickity-header-carousel",
+  "name":"Slide Carousel",
   "tag": "section",
   "class": "smallmans__theme",
   "settings": [
       {
         "type": "collection",
-        "id": "collection",
+        "id": "flickity-slider",
         "label": "Select the collection to show in header carousel"
       }
+  ],
+  "presets": [
+    {
+      "name": "Slide Carousel"
+    }
   ]
 }
 {% endschema %}

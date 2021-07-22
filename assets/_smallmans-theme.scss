@@ -1,0 +1,24 @@
+
+:root { 
+    --smallmans-duration: 300ms;
+
+    /* Color styles */
+    --theme-blue-light: #1A4AD1;
+    --theme-blue: #20409A;
+    --theme-blue-dark: #163372;
+    --theme-red: #EE2B24;
+    --theme-orange: #EE4824;
+    --theme-white: #FFFFFF;
+    --theme-gray-bright: #E4E7ED;
+    --theme-gray-warm: #DED9D5;
+    --theme-gray-cold: #EFF6F9;
+    --theme-gray-medium: #727A8B;
+    --theme-gray-dark: #404349;
+    --theme-yellow: #FECA2F;
+
+    --theme-color--primary: var(--theme-red);
+    --theme-color--secondary: var(--theme-blue);
+    --theme-color--accent: var(--theme-orange);
+    --theme-color--text: var(--theme-gray-dark);
+    --theme-color--text-inverse: var(--theme-gray-warm);
+}
