@@ -20,7 +20,7 @@
     }
     },
     "order": [
-    "flickity-slider",
-    "featured_products"
+      "flickity-slider",
+      "featured_products"
     ]
 }

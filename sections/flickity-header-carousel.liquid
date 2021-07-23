@@ -17,18 +17,25 @@
   </div>
 </div>
 
+<!-- 
+  
+note about schemas 
+property "name" is the section title/name/indication at online editor
+property "id" - inside settings, is the object 
+
+
+-->
 
 {% schema %}
 {
-  "name":"Slide Carousel",
-  "tag": "section",
+  "name":"Slideshow",
   "class": "smallmans__theme",
   "settings": [
       {
         "type": "collection",
-        "id": "flickity-slider",
+        "id": "collection",
         "label": "Select the collection to show in header carousel"
-      }
+      } 
   ],
   "presets": [
     {
@@ -42,6 +49,8 @@
   var elem = document.querySelector('.flickity-hero-carousel');
   var flkty = new Flickity( elem, {
     cellAlign: 'left',
+    wrapAround: true,
+    autoPlay: 3000,
     contain: true
   });
 {% endjavascript %}
