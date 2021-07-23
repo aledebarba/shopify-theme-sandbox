@@ -16,7 +16,7 @@
 
 <section class='smallmans call-to-action'>
     <div class='product-image'>
-        {{ this.product.featured_image.src | img_url:"large" | img_tag: this.product.title }}
+        {% render 'product-image', product: this.product %}
     </div>
     <div class='text-content'>
         <h3>{{ this.cta_title }} </h3>
