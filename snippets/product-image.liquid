@@ -1,0 +1,17 @@
+{%- comment -%}
+
+  accept product and render its image based on resolution
+
+{%- endcomment -%}
+
+
+<img srcset="{%- if productRef.featured_media.width >= 165 -%}{{ productRef.featured_media | img_url: '165x' }} 165w,{%- endif -%}
+                {%- if productRef.featured_media.width >= 360 -%}{{ productRef.featured_media | img_url: '360x' }} 360w,{%- endif -%}
+                {%- if productRef.featured_media.width >= 533 -%}{{ productRef.featured_media | img_url: '533x' }} 533w,{%- endif -%}
+                {%- if productRef.featured_media.width >= 720 -%}{{ productRef.featured_media | img_url: '720x' }} 720w,{%- endif -%}
+                {%- if productRef.featured_media.width >= 940 -%}{{ productRef.featured_media | img_url: '940x' }} 940w,{%- endif -%}
+                {%- if productRef.featured_media.width >= 1066 -%}{{ productRef.featured_media | img_url: '1066x' }} 1066w{%- endif -%}"
+                src="{{ productRef.featured_media | img_url: '533x' }}"
+                sizes="(min-width: 1100px) 535px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                alt="{{ productRef.featured_media.alt | escape }}"
+              />

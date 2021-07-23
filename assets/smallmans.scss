@@ -34,3 +34,39 @@ button.flickity-button:hover {
   .flickity-button:disabled {
     display: none;
   }
+
+  .smallmans.call-to-action {
+      display: flex;
+      flex-direction: row;
+      background-color: var(--theme-blue);
+      color: var(--theme-white);
+      margin: var(--theme-section-margin);
+      
+      .product-image {
+          width: 40%;
+          flex-shrink: 0;
+          padding: var(--theme-padding);
+          background-color: var(--theme-color--accent);
+          img {
+              width: 100%;
+              padding: calc(var(--theme-padding) * 1.5);
+          }
+      }
+      .text-content {
+          display: flex;
+          flex-direction: column;
+          padding: var(--theme-padding) calc(var(--theme-padding) * 5);
+          align-self: center;
+          h1 {
+              color: var(--theme-white);
+              margin: 0;
+          }
+          h3 {
+              color: var(--theme-white);
+              opacity: 0.8;
+          }
+          span {
+              margin: 16px 0px 32px 0px;
+          }
+      }
+  }

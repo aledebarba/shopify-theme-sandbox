@@ -2,7 +2,9 @@
   "sections": {
     "flickity-slider": {
       "type": "flickity-header-carousel",
-      "settings": {}
+      "settings": {
+        "collection":"home-page-slider"
+      }
     },
     "featured_products": {
       "type": "featured-collection",
@@ -17,10 +19,19 @@
         "add_image_padding": false,
         "show_vendor": false
       }
-    }
+    },
+      "call-to-action": {
+        "type": "call-to-action",
+        "settings": {
+          "title":"Call to action", 
+          "product": "francis-pegler-3-in-1-boiling-water-kitchen-mixer",
+          "image_position": "left" 
+        }
+      }
     },
     "order": [
       "flickity-slider",
-      "featured_products"
+      "featured_products",
+      "call-to-action"
     ]
 }

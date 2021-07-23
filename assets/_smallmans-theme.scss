@@ -22,6 +22,9 @@
     --theme-color--text: var(--theme-gray-dark);
     --theme-color--text-inverse: var(--theme-gray-warm);
     --theme-color--background: var(--theme-gray-warm);
+
+    --theme-padding: 16px;
+    --theme-section-margin: 64px 0px;
 }
 
 .smallmans {
@@ -58,7 +61,16 @@
         font-weight: bold;
     }
         
-    button {
+    a { 
+        text-decoration: none;
+        text-transform: uppercase;
+        border: 0px solid transparent !important;
+        outline: 0px solid transparent !important;
+        display: inline-block;
+    }
+
+    button,
+    .button {
             border-radius: 8px;
             outline: 0px solid transparent;
             border: 0px solid transparent;
@@ -69,39 +81,61 @@
             font-weight: bold;
             padding: 12px 24px;
             transition: all var(--smallmans-duration) linear;
+            cursor: pointer;
+            box-shadow: 0 0 0 0 transparent;
+            width: fit-content;
+            overflow: hidden;
+            max-width: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
     }
 
-    button.primary {
+    button.primary,
+    .button.primary {
         background-color: var(--theme-color--primary);
         color: var(--theme-color--text-inverse);
     }
-    button.secondary {
+    button.secondary,
+    .button.secondary {
         background-color: var(--theme-color--secondary);
         color: var(--theme-color--text-inverse);
     }
 
-    button.outline { 
+    button.outline,
+    .button.outline { 
         background-color: transparent;
         border: 2px solid var(--theme-color--primary);
-        color: var(--theme-color--primary);
+        color: var(--theme-color--primary) !important;
     }
-    button.outline.invert {
+    button.outline.invert,
+    .button.outline.invert {
         background-color: transparent;
-        border: 2px  solid -var(--theme-color--text-inverse);
-        color: var(--theme-color--text-inverse);
+        border: 2px  solid var(--theme-color--text-inverse) !important;
+        color: var(--theme-color--text-inverse) !important;
     }
-    button:hover {
-        box-shadow: 0px 0px 5px 0px #0008;
+    button.outline.secondary,
+    .button.outline.secondary {
+        background-color: transparent;
+        border: 2px  solid var(--theme-color--secondary);
+        color: var(--theme-color--secondary);
+    }
+}
+button.small,
+.button.small { 
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+}
+button.large,
+.button.large {
+    font-size: 1.2rem;
+    padding: 20px 32px;
+
+button:hover,
+a:hover {
+        box-shadow: 0px 0px 5px 0px #0008 !important;
         transition: all var(--smallmans-duration) linear;
-    }
-    button.small { 
-        font-size: 0.7em;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        padding: 8px 16px;
-    }
-    button.large {
-        font-size: 1.2rem;
-        padding: 20px 32px;
     }
 }

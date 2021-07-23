@@ -1,0 +1,78 @@
+{% comment %}
+    receives 
+
+    "settings": {
+        "title":"Call to action", // call to action box title
+        "product": "francis-pegler-3-in-1-boiling-water-kitchen-mixer", // seo product reference
+        "image_position": "left" // or right
+    }
+    
+    action: 
+    the default button links to to product page
+{% endcomment %}
+{% liquid
+    assign this = section.settings
+%}
+
+<section class='smallmans call-to-action'>
+    <div class='product-image'>
+        {{ this.product.featured_image.src | img_url:"large" | img_tag: this.product.title }}
+    </div>
+    <div class='text-content'>
+        <h3>{{ this.cta_title }} </h3>
+        <h1>{{ this.product.title }}</h1>
+        <span>
+            {{ this.product.description | strip_html | truncate: 300, '...' }}
+        </span>
+        <a  href="{{ this.product.url | default: '#' }}" 
+            class='button outline invert'>
+            {{ this.cta_button_text }}
+        </a>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Call to action",
+    "settings": [
+        {
+            "type": "text",
+            "id": "cta_title",
+            "label": "Title",
+            "default": "Read more about"
+        },
+        {
+            "type": "product",
+            "id": "product",
+            "label": "Pick a product"
+        },
+        {
+            "type": "radio",
+            "id": "image_position",
+            "label": "Image position",
+            "options": [
+                {
+                "value": "left",
+                "label": "Left"
+                },
+                {
+                "value": "right",
+                "label": "Right"
+                }
+            ],
+        "default": "left"
+        },
+        {
+            "type": "text",
+            "id": "cta_button_text",
+            "label": "Button text",
+            "default": "Read More..."
+        }
+    ],
+    "presets": [
+        {
+            "name":"Call To Action"
+        }
+    ]
+}
+{% endschema %}
