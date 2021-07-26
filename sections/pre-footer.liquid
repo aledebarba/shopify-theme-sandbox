@@ -75,15 +75,13 @@
                 {%- when 'image' -%}
                   <div class="pre-footer-block__details-content footer-block-image {{ block.settings.alignment }}">
                     {%- if block.settings.image != blank -%}
-                      {%- assign image_size = block.settings.image_width | append: 'x' -%}
+                      {%- assign image_padding = block.settings.image_padding | append: 'px' -%}
                       <img
-                        srcset= "{{ block.settings.image | img_url: image_size }}, {{ block.settings.image | img_url: image_size, scale: 2 }} 2x"
-                        src="{{ block.settings.image | img_url: '400x' }}"
+                        srcset= "{{ block.settings.image | img_url: "large" }}, {{ block.settings.image | img_url: image_size, scale: 2 }} 2x"
+                        src="{{ block.settings.image }}"
                         alt="{{ block.settings.image.alt | escape }}"
                         loading="lazy"
-                        width="{{ block.settings.image.width }}"
-                        height="{{ block.settings.image.height }}"
-                        style="max-width: min(100%, {{ block.settings.image_width }}px);"
+                        style="width: 100%; height: auto; padding: {{ image_padding }};"
                       >
                     {%- else -%}
                       {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
@@ -248,13 +246,13 @@
         {
           "type": "text",
           "id": "heading",
-          "default": "Heading",
+          "default": "Commitment to Quality",
           "label": "t:sections.footer.blocks.text.settings.heading.label"
         },
         {
           "type": "richtext",
           "id": "subtext",
-          "default": "<p>Share store details, promotions, or brand content with your customers.</p>",
+          "default": "<p>Smallmans is dedicated to achieving customer satisfaction through our commitment to providing reliable, maintainable and durable product on time; and continually striving to improve our product and quality system.</p>",
           "label": "t:sections.footer.blocks.text.settings.subtext.label"
         }
       ]
@@ -270,13 +268,13 @@
         },
         {
           "type": "range",
-          "id": "image_width",
-          "min": 50,
-          "max": 200,
-          "step": 5,
+          "id": "image_padding",
+          "min": 0,
+          "max": 128,
+          "step": 8,
           "unit": "px",
-          "label": "Image width",
-          "default": 100
+          "label": "Image padding",
+          "default": 0
         },
         {
           "type": "select",
@@ -308,27 +306,27 @@
       "options": [
         {
           "value": "accent-1",
-          "label": "t:sections.footer.settings.color_scheme.options__1.label"
+          "label": "Orange"
         },
         {
           "value": "accent-2",
-          "label": "t:sections.footer.settings.color_scheme.options__2.label"
+          "label": "Blue"
         },
         {
           "value": "background-1",
-          "label": "t:sections.footer.settings.color_scheme.options__3.label"
+          "label": "White"
         },
         {
           "value": "background-2",
-          "label": "t:sections.footer.settings.color_scheme.options__4.label"
+          "label": "Gray Cold"
         },
         {
           "value": "inverse",
-          "label": "t:sections.footer.settings.color_scheme.options__5.label"
+          "label": "Indigo"
         }
       ],
       "default": "background-1",
-      "label": "t:sections.footer.settings.color_scheme.label"
+      "label": "White"
     },
     {
       "type": "header",
@@ -355,41 +353,9 @@
     {
       "type": "checkbox",
       "id": "show_social",
-      "default": false,
+      "default": true,
       "label": "t:sections.footer.settings.show_social.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.footer.settings.header__3.content",
-      "info": "t:sections.footer.settings.header__4.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_country_selector",
-      "default": true,
-      "label": "t:sections.footer.settings.enable_country_selector.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.footer.settings.header__5.content",
-      "info": "t:sections.footer.settings.header__6.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_language_selector",
-      "default": true,
-      "label": "t:sections.footer.settings.enable_language_selector.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.footer.settings.header__7.content"
-    },
-    {
-      "type": "checkbox",
-      "id": "payment_enable",
-      "default": true,
-      "label": "t:sections.footer.settings.payment_enable.label"
-    }
+    }    
   ],
   "default": {
     "blocks": [

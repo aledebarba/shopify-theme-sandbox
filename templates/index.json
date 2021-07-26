@@ -27,11 +27,20 @@
           "product": "francis-pegler-3-in-1-boiling-water-kitchen-mixer",
           "image_position": "left" 
         }
+      },
+      "collection-slider": {
+        "type":"collection-slider",
+        "settings": {
+          "title": "This month sales",
+          "collection": "bathroom-deals",
+          "style": "blue"
+        }
       }
     },
     "order": [
       "flickity-slider",
       "featured_products",
-      "call-to-action"
+      "call-to-action",
+      "collection-slider"
     ]
 }

@@ -1,0 +1,80 @@
+{% liquid
+    assign this = section.settings
+%}
+
+  <h1 class='slider__title'>{{ this.title }}</h1>
+  <div class="smallmans__collection__slider" style="background-color: {{ sliderBgColor }}!important; --bg-style: var(--bg-{{- this.style -}} ); --h1-style: var(--h1-{{- this.style -}} ); --span-style: var(--span-{{- this.style -}} ); --p-style: var(--p-{{- this.style -}} );" >  
+      {%- for product in this.collection.products -%}
+        <div class='smallmans__collection__slider-card'>
+          <div class='flickity-card'>
+            <div class="image">
+              {{ product.featured_image.src | img_url:"large" | img_tag: product.title }}
+            </div>
+            <div class="text">
+              <h1 class="title">
+                {{ product.title }}
+              </h1>
+              <span class="description">
+                {{ product.description | strip_html | truncate: 100, '...' }}
+              </span>
+              <p class="price">
+                $&nbsp;{{ product.price }}
+              </p>
+            </div>
+            <a href="{{ product.url }}" class='button primary small'>
+              Read More            
+            </a>
+          </div>
+        </div>
+      {%- endfor -%}
+  </div>
+
+{% schema %}
+{
+  "name": "collection-slider",
+  "tag": "div",
+  "class": "smallmans",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Check these products",
+      "label": "Title"
+    },
+    {
+      "type": "radio",
+      "id": "style",
+      "label": "Card Color",
+      "default": "white",
+      "options": [
+        { "value": "blue", "label":"Blues" },
+        { "value": "orange", "label":"Reds" },
+        { "value": "gray", "label":"Grays" },
+        { "value": "white", "label":"White" }
+      ]
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Pick a collection"
+    }   
+  ],
+  "presets": [
+    {
+      "name": "Smallmans collection slider"
+    }
+  ]
+}
+{% endschema %}
+
+{% javascript %}
+  var elem = document.querySelector('.smallmans__collection__slider');
+  var flkty = new Flickity( elem, {
+    cellAlign: 'left',
+    wrapAround: true,
+    autoPlay: 3000,
+    setGallerySize: true,
+    contain: true,
+    pageDots: false
+  });
+{% endjavascript %}

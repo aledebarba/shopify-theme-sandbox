@@ -1,5 +1,13 @@
 
 .smallmans__header-hero {        
+    
+    .flickity-prev-next-button.previous {
+        left: 0px;
+      }
+      .flickity-prev-next-button.next {
+        right: 0px;
+      }
+
     margin: 16px;
     .flickity-hero-carousel {
         background-image: linear-gradient(135deg, white 60%, #4446);

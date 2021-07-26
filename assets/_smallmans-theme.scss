@@ -1,7 +1,6 @@
 
 :root { 
-    --smallmans-duration: 300ms;
-
+    
     /* Color styles */
     --theme-blue-light: #1A4AD1;
     --theme-blue: #20409A;
@@ -14,6 +13,7 @@
     --theme-gray-cold: #EFF6F9;
     --theme-gray-medium: #727A8B;
     --theme-gray-dark: #404349;
+    --theme-gray-black: #222;
     --theme-yellow: #FECA2F;
 
     --theme-color--primary: var(--theme-red);
@@ -22,9 +22,10 @@
     --theme-color--text: var(--theme-gray-dark);
     --theme-color--text-inverse: var(--theme-gray-warm);
     --theme-color--background: var(--theme-gray-warm);
-
+    
     --theme-padding: 16px;
     --theme-section-margin: 64px 0px;
+    --smallmans-duration: 300ms;
 }
 
 .smallmans {

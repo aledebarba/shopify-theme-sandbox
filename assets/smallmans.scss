@@ -1,24 +1,55 @@
 @import "_smallmans-theme.scss";
 @import "_smallmans-hero-header.scss";
 @import "_smallmans-cards.scss";
-
+@import "_smallmans-call-to-action";
+@import "_smallmans-collection-slider";
 
 img.smallmans.header__logo {
     width: 280px;
 }
 
+// flickity overwrites
 button.flickity-button,
 button.flickity-button:hover {
     background: transparent;
     box-shadow: none !important;
   }
-  /* big previous & next buttons */
-.flickity-prev-next-button,
-.flickity-prev-next-button:hover {
-    width: 100px;
-    height: 100px;
+
+  @media(min-width: 980px) {
+  .flickity-prev-next-button.previous {
+    left: -24px;
+  }
+  .flickity-prev-next-button.next {
+    right: -24px;
+  }
+}
+  @media(min-width: 1560px) {
+  .flickity-prev-next-button.previous {
+    left: -48px;
+  }
+  .flickity-prev-next-button.next {
+    right: -48px;
+  }
+}
+
+
+.flickity-prev-next-button {
+    width: 100px !important;
+    height: 100px !important;
     border: 0;
     outline: 0;
+    transform: scale(1);
+    filter: drop-shadow(3px 3px 2px #0008);
+    transition: all 300ms ease;
+  }
+  .flickity-prev-next-button:hover {
+    width: 100px !important;
+    height: 100px !important;
+    border: 0;
+    outline: 0;
+    filter: drop-shadow(5px 5px 4px #0008);
+    transform: scale(1.3);
+    transition: all 100ms ease;
   }
   /* icon color */
   .flickity-button-icon {
@@ -29,45 +60,3 @@ button.flickity-button:hover {
     fill: var(--theme-color--primary);
     transition: all var(--smallmans-duration) linear;
   }
-
-  /* hide disabled button */
-  .flickity-button:disabled {
-    display: none;
-  }
-
-  .smallmans.call-to-action {
-      display: flex;
-      flex-direction: row;
-      background-color: var(--theme-blue);
-      color: var(--theme-white);
-      margin: var(--theme-section-margin);
-      
-      .product-image {
-          width: 40%;
-          flex-shrink: 0;
-          padding: var(--theme-padding);
-          background-color: var(--theme-color--accent);
-          img {
-              width: 100%;
-              padding: calc(var(--theme-padding) * 1.5);
-          }
-      }
-      .text-content {
-          display: flex;
-          flex-direction: column;
-          padding: var(--theme-padding) calc(var(--theme-padding) * 5);
-          align-self: center;
-          h1 {
-              color: var(--theme-white);
-              margin: 0;
-          }
-          h3 {
-              color: var(--theme-white);
-              opacity: 0.8;
-          }
-          span {
-              margin: 16px 0px 32px 0px;
-          }
-      }
-  }
-  

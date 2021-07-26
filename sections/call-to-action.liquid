@@ -15,10 +15,16 @@
 %}
 
 <section class='smallmans call-to-action'>
-    <div class='product-image'>
+    {% if this.image_position == "left" %}
+    <div class='product-image' style='order: 1;'>
         {% render 'product-image', product: this.product %}
     </div>
-    <div class='text-content'>
+    {% else %} 
+    <div class='product-image' style='order: 3;'>
+        {% render 'product-image', product: this.product %}
+    </div>
+    {% endif %}
+    <div class='text-content' style='order: 2;'>
         <h3>{{ this.cta_title }} </h3>
         <h1>{{ this.product.title }}</h1>
         <span>
