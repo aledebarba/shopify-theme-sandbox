@@ -1,0 +1,124 @@
+{% comment %}
+
+    receives:
+        collection
+        layout: pipe_corner, pipe_bottom, watermark
+        colors : orange, blues, grays
+
+{% endcomment %}
+
+{% assign this = section.settings %}
+
+<div class='smallmans single-collection' theme='{{ this.color }}'>
+    <div class="single-collection__header grid-container">
+        <div class="row">
+            <div class="col" w75>
+                <h2>{{ this.title }}</h2>
+                <h1>{{ this.collection.title }}</h1>
+            </div>
+            <div class="col" w25>
+                <a href="" class="button primary small">
+                    View All Items
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="product-cards__container">
+        {% for item in this.collection.products %}
+            {% render 'smallmans-product-card', product:item, color:this.color %}
+        {% endfor %}
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name":"Single Collection",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Section title",
+            "default": "Check this collection"
+        },
+        {
+            "type": "collection",
+            "id": "collection",
+            "label": "Pick a collection"
+        },
+        {
+            "type": "radio",
+            "id": "layout",
+            "label": "Section Layout",
+            "default": "pipe_bottom",
+            "options": [
+                {
+                    "value": "pipe_bottom",
+                    "label": "Pipe Bottom"
+                },
+                {
+                    "value": "pipe_corner",
+                    "label": "Pipe Corner"
+                },
+                {
+                    "value": "watermark",
+                    "label": "Watermark"
+                }
+            ]
+        },
+        {
+            "type": "radio",
+            "id": "color",
+            "label": "Section Color Style",
+            "default": "blue",
+            "options": [
+                {
+                    "value": "gray",
+                    "label": "Grays"
+                },
+                {
+                    "value": "blue",
+                    "label": "Blues"
+                },
+                {
+                    "value": "orange",
+                    "label": "Oranges"
+                },
+                {
+                    "value": "transparent",
+                    "label": "Transparent"
+                }
+            ]
+        },
+        {
+            "type": "radio",
+            "id": "card_color",
+            "label": "Cards Style",
+            "default": "gray",
+            "options": [
+                {
+                    "value": "gray",
+                    "label": "Grays"
+                },
+                {
+                    "value": "blue",
+                    "label": "Blues"
+                },
+                {
+                    "value": "orange",
+                    "label": "Oranges"
+                },
+                {
+                    "value": "transparent",
+                    "label": "Transparent"
+                }
+            ]
+        }
+    ],
+    "presets": [
+       { 
+           "name": "Smallmans Collection Section"
+       }
+    ]
+}
+{% endschema %}

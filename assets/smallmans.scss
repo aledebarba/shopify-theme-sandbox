@@ -1,8 +1,10 @@
+@import "_grid.scss";
 @import "_smallmans-theme.scss";
 @import "_smallmans-hero-header.scss";
 @import "_smallmans-cards.scss";
 @import "_smallmans-call-to-action";
 @import "_smallmans-collection-slider";
+
 
 img.smallmans.header__logo {
     width: 280px;
@@ -31,8 +33,6 @@ button.flickity-button:hover {
     right: -48px;
   }
 }
-
-
 .flickity-prev-next-button {
     width: 100px !important;
     height: 100px !important;
@@ -59,4 +59,69 @@ button.flickity-button:hover {
   .flickity-button-icon:hover {
     fill: var(--theme-color--primary);
     transition: all var(--smallmans-duration) linear;
+  }
+
+
+  // collections sections
+
+  .smallmans.single-collection {
+      --background-color: var(--theme-color--secondary);
+      --text-color: var(--theme-white);
+      
+      width: 100%;
+      width: 100vw;
+      color: var(--text-color);
+      background-color: var(--background-color);
+      padding: 64px 0px;
+      
+      h1 {
+        color: var(--text-color);
+        font-size: 2.5em;
+        line-height: 0;
+      }
+
+      h2 {
+          color: var(--text-color);
+          font-size: 1em;
+          font-weight: lighter;
+          text-transform: uppercase;
+      }
+
+      
+  }
+
+  .smallmans.single-collection.blue,
+  .smallmans.single-collection[theme="blue"] {
+    --background-color: var(--theme-color--secondary);
+    --text-color: var(--theme-white);
+  }
+  .smallmans.single-collection.orange,
+  .smallmans.single-collection[theme="orange"] {
+    --background-color: var(--theme-color--primary);
+    --text-color: var(--theme-white);
+  }
+  .smallmans.single-collection.gray,
+  .smallmans.single-collection[theme="gray"] {
+    --background-color: var(--theme-gray-cold);
+    --text-color: var(--theme-black);
+  }
+  .smallmans.single-collection.transparent,
+  .smallmans.single-collection[theme="transparent"] {
+    --background-color: transparent;
+    --text-color: var(--theme-black);
+  }
+
+
+  .layout-pipe-bottom,
+  .smallmans.single-collection[layout='pipe-bottom']{
+      background-image: url();
+      background-position: bottom left;
+      background-repeat: no-repeat;
+  }
+
+  .layout-pipe-corner,
+  .smallmans.single-collection[layout='pipe-corner']{
+      background-image: url();
+      background-position: bottom left;
+      background-repeat: no-repeat;
   }
