@@ -1,12 +1,119 @@
-<div class='smallmans single-product'>
-    <div class="single-product__container">
-        <div class="image"></div>
-        <div class="details">
-            <h1></h1>
-            <div class="description"></div>
-            <div class="price"></div>
+{% assign this = section.settings %}
+
+{%- comment -%} Get the backgrond image reference {%- endcomment -%}
+{% if this.layout=='pipe_bottom' %}
+{% capture layoutbg %}
+url('{{ 'bottom-pipe.svg' | file_url }}')
+{% endcapture %}
+{% endif %}
+
+{% if this.layout=='pipe_corner' %}
+{% capture layoutbg %}
+url('{{ 'corner-pipe.svg' | file_url }}')
+{% endcapture %}
+{% endif %}
+
+{% if this.layout=='watermark' %}
+{% capture layoutbg %}
+url('{{ 'watermark-alpha-15.png' | file_url }}')
+{% endcapture %}
+{% endif %}
+
+
+<div class='smallmans single-product' style='--layoutbg:{{ layoutbg }}'>
+    <div class="single-product__container container-fill">
+        <div class='col'>
+            <div class="image">
+                {{ this.product.image | img_url: 'large' | img_tag: this.product.title }}
+            </div>
         </div>
-        <a href="" class="call-to-action"></a>
-        <div class="variation"></div>
+        <div class='col'>
+            <div class="details">
+                <h1>{{ this.product.title }}</h1>
+                <div class="description">
+                    {{ this.product.description }}
+                </div>
+                <div class="price">
+                    {{ currency.symbol }}&nbsp;{{ this.product.price }}
+                </div>
+            </div>
+            <div class="other_media">
+                {% for media in product.media %}
+                    {% case media.media_type %}
+                        {% when 'image' %}
+                        <div class="product-media-image">
+                            <img src="{{ media | img_url: '100x100'}}" alt="{{ media.alt }}">
+                        </div>
+                        {% when 'external_video' %}
+                        <div class="product-media-single__media">
+                            {{ media | external_video_tag }}
+                        </div>
+                        {% when 'video' %}
+                        <div class="product-media-single__video">
+                            {{ media | video_tag: controls: true }}
+                        </div>
+                        {% when 'model' %}
+                        <div class="product-media-single__media">
+                            {{ media | model_viewer_tag }}
+                        </div>
+                        {% else %}
+                        <div class="product-media-single__media">
+                            {{ media | media_tag }}
+                        </div>
+                    {% endcase %}
+                {% endfor %}
+            </div>
+            <a href="" class="button primary"></a>
+        </div>
     </div>
 </div>
+
+{% schema %}
+{
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Check this product",
+            "info": "The single product section title",
+            "placeholder": "Type the section title"
+        },
+        {
+            "type": "product",
+            "id": "product",
+            "label": "Pick a product"
+        },
+        {
+            "type": "radio",
+            "id": "layout",
+            "label": "Layout",
+            "default": "watermark",
+            "info": "The default option means no image background",
+            "options": [
+                {
+                    "value": "pipe_bottom",
+                    "label": "Pipe Bottom"
+                },
+                {
+                    "value": "pipe_corner",
+                    "label": "Pipe Corner"
+                },
+                {
+                    "value": "watermark",
+                    "label": "Watermark"
+                },               
+                {
+                    "value": "default",
+                    "label": "Default"
+                }               
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name":"Single Product With Extra Images"
+        }
+    ]
+}
+{% endschema %}

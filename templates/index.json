@@ -29,6 +29,13 @@
         "collection": "bathroom-deals"
       }
     },
+    "single-product-with-extras": {
+      "type":"section-single-product",
+      "settings": {
+        "title": "Check this product",
+        "layout": "pipe_bottom"
+      }
+    },
     "call-to-action": {
       "type": "call-to-action",
       "settings": {
@@ -51,6 +58,7 @@
       "featured_products",
       "single_collection",
       "call-to-action",
-      "collection-slider"
+      "collection-slider",
+      "single-product-with-extras"
     ]
 }

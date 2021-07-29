@@ -91,6 +91,12 @@
   max-width: 1920px;
   justify-content: space-between;
   margin: 16px auto;
+
+  &:after {
+    content: "";
+    flex: 0 0 30%;
+  }
+
 }
 
 .product-card__column {
@@ -100,7 +106,7 @@
   justify-content: center;
   margin: 16px 8px;
   flex-shrink: 1;
-  flex-grow: 1;
+  flex-grow: 0;
   flex-basis: 28%;
 
   @media (min-width: 768px) {
