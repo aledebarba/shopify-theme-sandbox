@@ -9,7 +9,25 @@
 
 {% assign this = section.settings %}
 
-<div class='smallmans single-collection' theme='{{ this.color }}'>
+{% if this.layout=='pipe_bottom' %}
+{% capture layoutbg %}
+url('{{ 'bottom-pipe.svg' | file_url }}')
+{% endcapture %}
+{% endif %}
+
+{% if this.layout=='pipe_corner' %}
+{% capture layoutbg %}
+url('{{ 'corner-pipe.svg' | file_url }}')
+{% endcapture %}
+{% endif %}
+
+{% if this.layout=='watermark' %}
+{% capture layoutbg %}
+url('{{ 'watermark-alpha-15.png' | file_url }}')
+{% endcapture %}
+{% endif %}
+
+<div class='smallmans single-collection' theme='{{ this.color }}' layout='{{this.layout}}' style="--layoutbg: {{ layoutbg }}">
     <div class="single-collection__header grid-container">
         <div class="row">
             <div class="col" w75>
@@ -47,10 +65,17 @@
             "label": "Pick a collection"
         },
         {
+            "type": "checkbox",
+            "id": "show_cart_button",
+            "label": "Show Add to Cart Button",
+            "default": false,
+            "info": "Select if each product of the section will show a button with 'Add To Cart' label."
+        },
+        {
             "type": "radio",
             "id": "layout",
             "label": "Section Layout",
-            "default": "pipe_bottom",
+            "default": "default",
             "options": [
                 {
                     "value": "pipe_bottom",
@@ -63,6 +88,10 @@
                 {
                     "value": "watermark",
                     "label": "Watermark"
+                },
+                {
+                    "value": "default",
+                    "label": "Default"
                 }
             ]
         },

@@ -63,8 +63,8 @@ button.flickity-button:hover {
 
 
   // collections sections
-
   .smallmans.single-collection {
+      --layoutbg: none;
       --background-color: var(--theme-color--secondary);
       --text-color: var(--theme-white);
       
@@ -85,9 +85,40 @@ button.flickity-button:hover {
           font-size: 1em;
           font-weight: lighter;
           text-transform: uppercase;
+          margin-top: 0;
+          line-height: 1;
       }
+  }
 
-      
+  .layoutbg-pipe_bottom,
+  .smallmans.single-collection[layout="pipe_bottom"] {
+      background-image: var(--layoutbg);
+      background-repeat: no-repeat;
+      background-position: 0px calc(100% - 32px);
+      background-size: 50%;
+      padding: 64px 0px 128px 0px !important;
+  }
+
+  .layoutbg-pipe_corner,
+  .smallmans.single-collection[layout="pipe_corner"] {
+      background-image: var(--layoutbg);
+      background-repeat: no-repeat;
+      background-position: calc(100% - 32px) calc(100% - 32px);
+      background-size: 100%;
+      padding: 64px 0px 128px 0px !important;
+  }
+  
+  .layoutbg-watermark,
+  .smallmans.single-collection[layout="watermark"] {
+      background-image: var(--layoutbg);
+      background-repeat: no-repeat;
+      background-position: calc(100% + 240px) 0px;
+      background-size: 50%;
+  }
+
+  .layoutbg-default,
+  .smallmans.single-collection[layout="default"] {
+      background-image: none;
   }
 
   .smallmans.single-collection.blue,

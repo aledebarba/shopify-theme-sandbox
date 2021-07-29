@@ -25,7 +25,7 @@
       "settings":{
         "title":"Check this collection",
         "colors": "grays",
-        "layout": "pipe_botom",
+        "layout": "pipe_corner",
         "collection": "bathroom-deals"
       }
     },

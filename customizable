@@ -1,0 +1,16 @@
+
+D:\dev\GetUserTo\smallmans\shopify-theme>git add . 
+
+D:\dev\GetUserTo\smallmans\shopify-theme>git commit -m "ale@getuser.to - code update = product collection" 
+[master a437909] ale@getuser.to - code update = product collection
+ 14 files changed, 637 insertions(+), 36 deletions(-)
+ create mode 100644 assets/_grid.scss
+ rewrite assets/smallmans.css (97%)
+ rewrite assets/smallmans.css.map (95%)
+ create mode 100644 customizable
+ create mode 100644 sections/section-single-collection.liquid
+ create mode 100644 sections/section-single-product.liquid
+ create mode 100644 snippets/product-card-with-image-slide.liquid
+ create mode 100644 snippets/smallmans-product-card.liquid
+
+D:\dev\GetUserTo\smallmans\shopify-theme>git push 
