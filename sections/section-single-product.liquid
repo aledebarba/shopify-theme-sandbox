@@ -21,13 +21,11 @@ url('{{ 'watermark-alpha-15.png' | file_url }}')
 
 
 <div class='smallmans single-product' style='--layoutbg:{{ layoutbg }}'>
-    <div class="single-product__container container-fill">
-        <div class='col'>
-            <div class="image">
-                {{ this.product.image | img_url: 'large' | img_tag: this.product.title }}
-            </div>
+    <div class="single-product__container">
+        <div class="image">
+                {{ this.product.featured_image | img_url: 'large' | img_tag: this.product.title }}
         </div>
-        <div class='col'>
+        <div class='data'>
             <div class="details">
                 <h1>{{ this.product.title }}</h1>
                 <div class="description">
@@ -38,7 +36,7 @@ url('{{ 'watermark-alpha-15.png' | file_url }}')
                 </div>
             </div>
             <div class="other_media">
-                {% for media in product.media %}
+                {% for media in this.product.media %}
                     {% case media.media_type %}
                         {% when 'image' %}
                         <div class="product-media-image">

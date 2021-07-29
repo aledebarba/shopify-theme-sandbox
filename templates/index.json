@@ -33,7 +33,8 @@
       "type":"section-single-product",
       "settings": {
         "title": "Check this product",
-        "layout": "pipe_bottom"
+        "layout": "pipe_bottom",
+        "product": "reference-shower"
       }
     },
     "call-to-action": {
