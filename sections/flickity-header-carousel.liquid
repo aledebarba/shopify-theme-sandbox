@@ -51,6 +51,13 @@ property "id" - inside settings, is the object
     cellAlign: 'left',
     wrapAround: true,
     autoPlay: 3000,
-    contain: true
+    contain: true,
+    resize: true,
+    setGallerySize: true
   });
+
+ document.addEventListener("DOMContentLoaded", function() {
+   flkty.resize();
+});
+
 {% endjavascript %}

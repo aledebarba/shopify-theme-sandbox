@@ -1,3 +1,3 @@
 git add .
-git commit -m "ale@getuser.to - code update %*"
+git commit -m "ale@getuserto.com - code update %*"
 git push

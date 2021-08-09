@@ -6,20 +6,6 @@
         "collection":"home-page-slider"
       }
     },
-    "featured_products": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Bathroom Deals",
-        "collection": "bathroom-deals",
-        "products_to_show": 6,
-        "show_view_all": true,
-        "swipe_on_mobile": true,
-        "image_ratio": "adapt",
-        "show_secondary_image": false,
-        "add_image_padding": false,
-        "show_vendor": false
-      }
-    },
     "single_collection": {
       "type":"section-single-collection",
       "settings":{
@@ -34,14 +20,14 @@
       "settings": {
         "title": "Check this product",
         "layout": "pipe_bottom",
-        "product": "reference-shower"
+        "product": "leakmate-emergency-leak-stop-tool"
       }
     },
     "call-to-action": {
       "type": "call-to-action",
       "settings": {
         "title":"Call to action", 
-        "product": "francis-pegler-3-in-1-boiling-water-kitchen-mixer",
+        "product": "leakmate-emergency-leak-stop-tool",
         "image_position": "left" 
       }
     },
@@ -56,7 +42,6 @@
     },
     "order": [
       "flickity-slider",
-      "featured_products",
       "single_collection",
       "call-to-action",
       "collection-slider",

@@ -1,5 +1,4 @@
 
-
  .smallmans.call-to-action {
     display: flex;
     flex-direction: row;
@@ -9,11 +8,10 @@
     .product-image {
         width: 40%;
         flex-shrink: 0;
-        padding: var(--theme-padding);
+        padding: calc( var(--theme-padding) * 3);
         background-color: var(--theme-color--accent);
         img {
             width: 100%;
-            padding: calc(var(--theme-padding) * 1.5);
         }
     }
 
@@ -25,6 +23,7 @@
         h1 {
             color: var(--theme-white);
             margin: 0;
+            font-size: var(--font--size); // theme fluid size
         }
         h3 {
             color: var(--theme-white);

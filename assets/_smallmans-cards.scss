@@ -1,89 +1,3 @@
-.card {
-    display: block;
-    overflow: hidden;
-    text-decoration: none;
-  }
-  
-  .card + .card-information {
-    margin-top: 1.2rem;
-  }
-  
-  .card.card--soft {
-    color: var(--theme-color--background);
-    background-color: var(--theme-color--primary);
-  }
-  
-  .card__text {
-    display: flex;
-    align-items: center;
-  }
-  
-  .card .icon-arrow {
-    width: 1.5rem;
-  }
-  
-  .card .icon-wrap {
-    margin-left: 0.8rem;
-    white-space: nowrap;
-    transition: transform var(--duration-short) ease;
-    overflow: hidden;
-  }
-  
-  .card .h1 .icon-arrow,
-  .card .h2 .icon-arrow {
-    padding-bottom: 0.3rem;
-    padding-top: 0.3rem;
-  }
-  
-  .card--media {
-    display: block;
-    text-decoration: none;
-  }
-  
-  .card--text-only {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .card--text-only::before {
-    content: '';
-    display: block;
-    padding-bottom: 100%;
-  }
-  
-  .card--product {
-    border: 0;
-    position: relative;
-  }
-  
-  .card--stretch {
-    height: 100%;
-  }
-  
-  .card--light-border {
-    border: 0;
-  }
-  
-  .card--light-border:hover {
-    border: 0;
-    box-shadow: none;
-  }
-  
-  .card__text-spacing {
-    padding: 3rem;
-  }
-  
-  .card-colored.color-background-1 {
-    background-color: 0;
-  }
-  
-  .card--media .card__text-spacing {
-    padding: 2rem;
-  }
-  
-
-  //
-
  .product-cards__container {
   display: flex;
   flex-wrap: wrap;
@@ -133,11 +47,12 @@
   --hfill: auto;
   --pads: 0px 0px 16px 0px;
   --shadow-color: #88888888;
+  --border--radius: 16px;
 
   background-color: var(--bg-color);
   width: var(--layout-size);
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: var(--border--radius);
   display: flex;
   flex-direction: var(--layout-direction);
   align-items: center;
@@ -146,7 +61,8 @@
 
   .card__image {
     width: 100%;
-    height: 320px;
+    height: 0;
+    padding-bottom: 100%;
     overflow: hidden;
     border-radius: 16px;
     margin-bottom: 8px;
@@ -173,9 +89,11 @@
     }
 
     img {
-      object-fit: cover;
-      height: 100%;
+      position: absolute;
       width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
     }
   }
 
@@ -191,7 +109,7 @@
       color: var(--text-color);
       font-weight: bolder;
       margin: 0px 8px;
-      font-size: 1.2em;
+      font-size: 1.2vw;
       line-height: 1.4;
 
     }
@@ -263,6 +181,7 @@
   }
 }
 
+
 .card-theme-transparent-invert,
 .smallmans__card[theme="transparent-invert"] {
   --bg-color: #d3d3d3;
@@ -321,4 +240,126 @@
   --wfill: 100%;
   --hfill: auto;
   --pads: 0px 16px 0px 0px;
+}
+
+.smallmans__product-card[parent="slider"] {
+  --layout-direction: row;
+  --layout-size: 640px;
+  --wfill: 100%;
+  --hfill: auto;
+  --pads: 0px 16px 0px 0px;
+}
+.smallmans__product-card[parent="collection"] {
+  --layout-direction: row;
+  --layout-size: 640px;
+  --wfill: 100%;
+  --hfill: auto;
+  --pads: 0px 16px 0px 0px;
+}
+.smallmans__product-card[parent="collection"] {
+  --layout-direction: row;
+  --layout-size: 640px;
+  --wfill: 100%;
+  --hfill: auto;
+  --pads: 0px 16px 0px 0px;
+}
+.smallmans__product-card[border="corner"] {
+  --border--radius: 0px;
+}
+.smallmans__product-card[border="rounded-max"] {
+  --border--radius: 24px;
+}
+.smallmans__product-card[show-title="false"] {
+  --border--radius: 24px;
+}
+.smallmans__product-card[show-price="false"] {
+  --border--radius: 24px;
+}
+.smallmans__product-card[show-buy="false"] {
+  --border--radius: 24px;
+}
+
+//
+
+.card {
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.card + .card-information {
+  margin-top: 1.2rem;
+}
+
+.card.card--soft {
+  color: var(--theme-color--background);
+  background-color: var(--theme-color--primary);
+}
+
+.card__text {
+  display: flex;
+  align-items: center;
+}
+
+.card .icon-arrow {
+  width: 1.5rem;
+}
+
+.card .icon-wrap {
+  margin-left: 0.8rem;
+  white-space: nowrap;
+  transition: transform var(--duration-short) ease;
+  overflow: hidden;
+}
+
+.card .h1 .icon-arrow,
+.card .h2 .icon-arrow {
+  padding-bottom: 0.3rem;
+  padding-top: 0.3rem;
+}
+
+.card--media {
+  display: block;
+  text-decoration: none;
+}
+
+.card--text-only {
+  display: flex;
+  justify-content: center;
+}
+
+.card--text-only::before {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+
+.card--product {
+  border: 0;
+  position: relative;
+}
+
+.card--stretch {
+  height: 100%;
+}
+
+.card--light-border {
+  border: 0;
+}
+
+.card--light-border:hover {
+  border: 0;
+  box-shadow: none;
+}
+
+.card__text-spacing {
+  padding: 3rem;
+}
+
+.card-colored.color-background-1 {
+  background-color: 0;
+}
+
+.card--media .card__text-spacing {
+  padding: 2rem;
 }

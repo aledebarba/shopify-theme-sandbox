@@ -1,0 +1,7 @@
+@mixin responsive($property, $rules) {
+    @each $minwidth, $value in $rules {
+      @media (min-width: $minwidth) {
+        #{$property}: $value;
+      }
+    }
+  }
