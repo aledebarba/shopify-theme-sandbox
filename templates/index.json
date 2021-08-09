@@ -3,48 +3,51 @@
     "flickity-slider": {
       "type": "flickity-header-carousel",
       "settings": {
-        "collection":"home-page-slider"
+        "collection": "home-page-slider"
       }
     },
     "single_collection": {
-      "type":"section-single-collection",
-      "settings":{
-        "title":"Check this collection",
-        "colors": "grays",
-        "layout": "pipe_corner",
-        "collection": "bathroom-deals"
-      }
-    },
-    "single-product-with-extras": {
-      "type":"section-single-product",
+      "type": "section-single-collection",
       "settings": {
-        "title": "Check this product",
-        "layout": "pipe_bottom",
-        "product": "leakmate-emergency-leak-stop-tool"
+        "title": "Check this collection",
+        "collection": "bathroom-deals",
+        "show_cart_button": false,
+        "layout": "pipe_corner",
+        "color": "blue",
+        "card_color": "gray"
       }
     },
     "call-to-action": {
       "type": "call-to-action",
       "settings": {
-        "title":"Call to action", 
-        "product": "leakmate-emergency-leak-stop-tool",
-        "image_position": "left" 
+        "cta_title": "Read more about",
+        "product": "francis-pegler-3-in-1-boiling-water-kitchen-mixer",
+        "image_position": "left",
+        "cta_button_text": "Read More..."
       }
     },
     "collection-slider": {
-      "type":"collection-slider",
+      "type": "collection-slider",
       "settings": {
         "title": "This month sales",
-        "collection": "bathroom-deals",
-        "style": "blue"
+        "style": "blue",
+        "collection": "bathroom-deals"
+      }
+    },
+    "single-product-with-extras": {
+      "type": "section-single-product",
+      "settings": {
+        "title": "Check this product",
+        "product": "cashel-traditional-free-standing-bath-white-1720-x-776-mm",
+        "layout": "pipe_bottom"
       }
     }
-    },
-    "order": [
-      "flickity-slider",
-      "single_collection",
-      "call-to-action",
-      "collection-slider",
-      "single-product-with-extras"
-    ]
+  },
+  "order": [
+    "flickity-slider",
+    "single_collection",
+    "call-to-action",
+    "collection-slider",
+    "single-product-with-extras"
+  ]
 }
