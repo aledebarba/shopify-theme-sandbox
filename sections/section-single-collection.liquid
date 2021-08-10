@@ -28,24 +28,20 @@ url('{{ 'watermark-alpha-15.png' | file_url }}')
 {% endif %}
 
 <div class='smallmans single-collection' theme='{{ this.color }}' layout='{{this.layout}}' style="--layoutbg: {{ layoutbg }}">
-    <div class="smallmans__content">
         <div class="single-collection__header">
                 <div class="collection-title">
-                    <h2>{{ this.title }}</h2>
+                    <h4>{{ this.title }}</h4>
                     <h1>{{ this.collection.title }}</h1>
                 </div>
-                <div class="collection-button">
-                    <a href="{{ this.collection.url }}" class="button primary small">
+                <a href="{{ this.collection.url }}" class="button primary">
                         View All Items
-                    </a>
-                </div>
+                </a>
         </div>
         <div class="product-cards__container">
             {% for item in this.collection.products limit:8 %}
                 {% render 'smallmans-product-card', product:item, color:this.card_color %}
             {% endfor %}
         </div>
-    </div>
 </div>
 
 {% schema %}

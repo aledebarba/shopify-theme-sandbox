@@ -16,16 +16,14 @@
     .flickity-hero-carousel {
         background-image: linear-gradient(135deg, white 60%, #4446);
         width: 100%;
-        @media screen and (min-width: 1921px) {
-            max-height: 75vh;
-        }
+        @include responsive(max-width, (1921px: 75vh));
         .slide {
             width: 100%;
             display: flex;
-
+            overflow: hidden;
+            
             &__product-image {
                 width: 50%;
-                height: 100%;
                 min-width: 280px;
                 min-height: 280px;
                 padding: 16px;
@@ -33,6 +31,11 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                @media screen and (min-width: 1921px) {
+                    max-height: 75%;
+                    height: 75%;
+                    width: auto;
+                }
                 
                 img {
                     width: 80%;

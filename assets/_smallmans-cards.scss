@@ -1,10 +1,11 @@
  .product-cards__container {
+  width:  var(--max-container-width);
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  width:  var(--max-container-width);
-  max-width: 1920px;
   justify-content: space-between;
-  margin: 16px auto;
+  gap: 24px;
+  margin: 0 auto;
 
   &:after {
     content: "";
@@ -14,24 +15,14 @@
 }
 
 .product-card__column {
-  width: 300px;
-  min-width: 300px;
   display: flex;
   justify-content: center;
-  margin: 16px 8px;
+  margin: 16px 0px;
   flex-shrink: 1;
-  flex-grow: 0;
-  flex-basis: 28%;
-
-  @media (min-width: 768px) {
-    width: 45%;
-    max-width: 380px;
-    min-width: 300px;
-  }
-  @media (min-width: 1200px) {
-   width: 30%;
-   max-width: 420px;
-  }
+  flex-grow: 1;
+  flex-basis: 20%;
+  max-width: 420px;
+  min-width: 280px;
 }
 
 .smallmans__product-card {
@@ -49,20 +40,20 @@
   --shadow-color: #88888888;
   --border--radius: 16px;
 
-  background-color: var(--bg-color);
-  width: var(--layout-size);
-  overflow: hidden;
-  border-radius: var(--border--radius);
   display: flex;
   flex-direction: var(--layout-direction);
   align-items: center;
+  width: var(--layout-size);
   height: 100%;
-  font-size: 24px;
+  border-radius: var(--border--radius);
+  overflow: hidden;
+  background-color: var(--bg-color);
+  font: var(--font-p);
 
   .card__image {
     width: 100%;
-    height: 0;
-    padding-bottom: 100%;
+    height: 0; // * make squared space
+    padding-bottom: 100%; // make squared space
     overflow: hidden;
     border-radius: 16px;
     margin-bottom: 8px;
@@ -74,7 +65,7 @@
     transition: 300ms ease all;
 
     &:hover {
-      box-shadow: 0 0 20px 0px #fff;
+      box-shadow: 0 0 20px 0px #000;
       transition: 300ms ease all;
     }
 
@@ -85,7 +76,7 @@
       right: 0;
       bottom: 0;
       top: 0;
-      box-shadow: inset 0 0 80px 1px #00000088;
+      box-shadow: inset 0 0 80px 1px #00000033; // make halo
     }
 
     img {
@@ -93,7 +84,7 @@
       width: 100%;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%); // center image inside image container
     }
   }
 
@@ -106,25 +97,24 @@
     flex-grow: 1;
 
     h1.title {
+      font: var(--font-card-h1);
       color: var(--text-color);
-      font-weight: bolder;
-      margin: 0px 8px;
-      font-size: 1.2vw;
-      line-height: 1.4;
-
+      margin: 0px 16px;
+      width: 30ch;
+      text-overflow: ellipsis;
+      border: 1px solid white;
     }
 
     p.price {
+      font: var(--font-card-price);
       flex-grow: 1;
       color: var(--text-color);
-      font-size: 0.8em;
-      font-weight: bold;
-      line-height: 1em;
       overflow: hidden;
       margin: 16px 0;
 
       &:before {
-        content: "$ ";
+        --currency: "$ ";
+        content: var(--currency);
       }
     }
 

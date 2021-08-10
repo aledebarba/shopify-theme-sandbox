@@ -1067,7 +1067,6 @@ deferred-media {
 /* component-button */
 /* Button - default */
 
-.button,
 .shopify-challenge__button,
 .customer button {
   cursor: pointer;
@@ -1102,7 +1101,6 @@ deferred-media {
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
-.button,
 .button-label,
 .shopify-challenge__button,
 .customer button {

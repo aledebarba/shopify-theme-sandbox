@@ -42,10 +42,15 @@
     --font-h2: normal normal bold calc(var(--font--size) * 1.8)/1 var(--font--family) ;
     --font-h3: normal normal normal calc(var(--font--size) * 1.2)/1 var(--font--family); 
     --font-h4: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family); 
-    --font-button: normal normal bold calc(var(--font--size) * 1)/1 var(--font--family); 
+    --font-button: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family); 
     --font-button-small: normal normal bold calc(var(--font--size) * 0.5)/1 var(--font--family); 
     --font-button-large: normal normal bold calc(var(--font--size) * 1.2)/1 var(--font--family); 
     --font-menu-main:   normal normal bold calc(var(--font--size) * 1.2)/1 var(--font--family); 
+    --font-card-h1: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family); 
+    --font-card-h2: normal normal normal calc(var(--font--size) * 0.8)/1 var(--font--family); 
+    --font-card-price: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family); 
+    --font-card-text: normal normal normal calc(var(--font--size) * 0.8)/1 var(--font--family); 
+
     
     --font--size: calc( var(--font-min) *1px);
     @media (min-width: 320px) { 
@@ -101,30 +106,23 @@
         font: var(--font-p);
         text-decoration: none;
         text-transform: uppercase;
-        border: 0px solid transparent !important;
-        outline: 0px solid transparent !important;
-        display: inline-block;
     }
 
     button,
     .button {
-            font: var(--font-button);
-            border-radius: 8px;
-            outline: 0px solid transparent;
-            border: 0px solid transparent;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 12px 24px;
-            transition: all var(--smallmans-duration) linear;
-            cursor: pointer;
-            box-shadow: 0 0 0 0 transparent;
-            width: fit-content;
-            overflow: hidden;
-            max-width: 280px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        border: 0 solid transparent;
+        outline: 0 solid transparent;
+        box-shadow: 0 0 0 0 transparent;
+        font: var(--font-button);
+        text-align: center;
+        transition: all var(--smallmans-duration) linear;
+        cursor: pointer;
+        height: fit-content;
+        padding: var(--font--size);
     }
 
     button.primary,
@@ -162,7 +160,6 @@ button.small,
     font: var(--font-button-small);
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    padding: 8px 16px;
 }
 button.large,
 .button.large {
