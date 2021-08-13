@@ -295,29 +295,11 @@ body,
   z-index: 2;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-.h0,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5 {
-  font-family: var(--font-heading-family);
-  font-style: var(--font-heading-style);
-  font-weight: var(--font-heading-weight);
-  /* letter-spacing: 0.06rem; */
-  color: rgb(var(--color-foreground));
-  line-height: 1.3;
-}
-
-.h0 {
-  font-size: 4rem;
-}
-
+h1 { font: var(--font-h1); }
+h2 { font: var(--font-h2); }
+h3 { font: var(--font-h3); }
+h4, h5, h0 { font: var(--font-h4); }
+/* 
 @media only screen and (min-width: 750px) {
   .h0 {
     font-size: 5.2rem;
@@ -384,7 +366,7 @@ h6,
   color: rgba(var(--color-foreground), 0.75);
   margin-block-start: 1.67em;
   margin-block-end: 1.67em;
-}
+} */
 
 blockquote {
   font-style: italic;
@@ -400,21 +382,24 @@ blockquote {
 }
 
 .caption {
-  font-size: 1rem;
+  font: var(--font-p);
+  /* font-size: 1rem;
   letter-spacing: 0.07rem;
-  line-height: 1.7;
+  line-height: 1.7; */
 }
 
 @media screen and (min-width: 750px) {
   .caption {
-    font-size: 1.2rem;
+    font: var(--font-p);
+    /* font-size: 1.2rem; */
   }
 }
 
 .caption-with-letter-spacing {
-  font-size: 1rem;
+  /* font-size: 1rem;
   letter-spacing: 0.13rem;
-  line-height: 1.2;
+  line-height: 1.2; */
+  font: var(--font-p);
   text-transform: uppercase;
 }
 
@@ -424,9 +409,10 @@ blockquote {
 .field__input,
 .form__label,
 .select__select {
-  font-size: 1.3rem;
+  /* font-size: 1.3rem;
   line-height: 1.5;
-  letter-spacing: 0.04rem;
+  letter-spacing: 0.04rem; */
+  font: var(--font-p);
 }
 
 .color-foreground {
@@ -436,7 +422,7 @@ blockquote {
 table:not([class]) {
   table-layout: fixed;
   border-collapse: collapse;
-  font-size: 1.4rem;
+  font: var(--font-p);
   border-style: hidden;
   box-shadow: 0 0 0 0.1rem rgba(var(--color-foreground), 0.2);
   /* draws the table border  */
@@ -530,10 +516,8 @@ h6:empty {
 }
 
 .link-with-icon {
+  font: var(--font-p);
   display: inline-flex;
-  font-size: 1.4rem;
-  font-weight: 600;
-  letter-spacing: 0.1rem;
   text-decoration: none;
   margin-bottom: 4.5rem;
   white-space: nowrap;

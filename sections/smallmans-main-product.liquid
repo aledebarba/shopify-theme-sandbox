@@ -73,9 +73,10 @@
           {%- when '@app' -%}
             {% render block %}
           {%- when 'text' -%}
-            <p class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
+            <!-- <p class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}> -->
+            <!-- <small style="text-transform: uppercase;">
               {{- block.settings.text -}}
-            </p>
+            </small> -->
           {%- when 'title' -%}
             <h3 class="product__title" {{ block.shopify_attributes }}>
               {{ product.title | escape }}
@@ -144,11 +145,15 @@
               </modal-opener>
               <a href="{{ block.settings.page.url }}" class="product-popup-modal__button link no-js">{{ block.settings.link_label }}</a>
           {%- when 'share' -%}
+          
             <share-button class="share-button" {{ block.shopify_attributes }}>
-              <button class="share-button__button button button--tertiary hidden">
-                {% render 'icon-share' %}
-                {{ 'general.share.share' | t }}
-              </button>
+              <div class="smallmans">
+                <!-- <button class="share-button__button button button--tertiary hidden"> -->
+                <button class="secondary" component='productpage'>
+                  <div class="button__icon">{% render 'icon-share' %}</div>
+                  {{ 'general.share.share' | t }}
+                </button>
+              </div>
               <details>
                 <summary class="share-button__button button button--tertiary">
                   {% render 'icon-share' %}
@@ -259,7 +264,7 @@
                 {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
                   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                   <div class="product-form__buttons">
-                    <button
+                    <!-- <button
                       type="submit"
                       name="add"
                       class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
@@ -270,7 +275,23 @@
                         {%- else -%}
                           {{ 'products.product.sold_out' | t }}
                         {%- endif -%}
+                    </button> -->
+                    <div class="smallmans">
+                      <button
+                      type="submit"
+                      name="add"
+                      class="button primary"
+                      theme='orange'
+                      component="productpage"
+                      {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+                    >
+                        {%- if product.selected_or_first_available_variant.available -%}
+                          {{ 'products.product.add_to_cart' | t }}
+                        {%- else -%}
+                          {{ 'products.product.sold_out' | t }}
+                        {%- endif -%}
                     </button>
+                    </div>
                     {%- if block.settings.show_dynamic_checkout -%}
                       {{ form | payment_button }}
                     {%- endif -%}

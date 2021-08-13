@@ -200,7 +200,7 @@ body {
   --font-button: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family);
   --font-button-small: normal normal bold calc(var(--font--size) * 0.4)/1 var(--font--family);
   --font-button-large: normal normal bold calc(var(--font--size) * 1)/1 var(--font--family);
-  --font-menu-main:   normal normal bold calc(var(--font--size) * 1.2)/1 var(--font--family);
+  --font-menu-main:   normal normal bold calc(var(--font--size) * 1)/1 var(--font--family);
   --font-card-h1: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family);
   --font-card-h2: normal normal normal calc(var(--font--size) * 0.8)/1 var(--font--family);
   --font-card-price: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family);
@@ -342,6 +342,15 @@ body {
   color: var(--theme-color--secondary);
 }
 
+.smallmans .button__icon {
+  margin-right: 8px;
+}
+
+.smallmans .button__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
 input[name="add"].small,
 button.small,
 .button.small {
@@ -435,6 +444,32 @@ a.button[theme="black"],
 button[theme="black"] {
   background-color: var(--theme-gray-dark) !important;
   color: white !important;
+}
+
+input[component="productpage"],
+.button[component="productpage"],
+a.button[component="productpage"],
+button[component="productpage"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin: 0px 0px 16px 0px;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+input[component="productcard"],
+.button[component="productcard"],
+a.button[component="productcard"],
+button[component="productcard"] {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0;
 }
 
 .smallmans__header-hero {

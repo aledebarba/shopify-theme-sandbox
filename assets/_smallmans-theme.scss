@@ -48,7 +48,7 @@
     --font-button: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family); 
     --font-button-small: normal normal bold calc(var(--font--size) * 0.4)/1 var(--font--family); 
     --font-button-large: normal normal bold calc(var(--font--size) * 1)/1 var(--font--family); 
-    --font-menu-main:   normal normal bold calc(var(--font--size) * 1.2)/1 var(--font--family); 
+    --font-menu-main:   normal normal bold calc(var(--font--size) * 1)/1 var(--font--family); 
     --font-card-h1: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family); 
     --font-card-h2: normal normal normal calc(var(--font--size) * 0.8)/1 var(--font--family); 
     --font-card-price: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family); 
@@ -163,6 +163,15 @@
         border: 2px  solid var(--theme-color--secondary);
         color: var(--theme-color--secondary);
     }
+
+    .button__icon {
+        margin-right: 8px;
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
 }
 input[name="add"].small,
 button.small,
@@ -208,5 +217,21 @@ $buttonThemes:
     button[theme="#{$color}"]{
       background-color: #{$bg} !important;
       color: #{$text} !important;
+    }
+}
+
+$componentType:
+"productpage" "flex" "100%" "0px 0px 16px 0px" "1rem" "uppercase",
+"productcard" "inline-flex" "fit-content" "0" "" "";
+@each $component, $display, $width, $margin, $padding, $texttransform in $componentType {
+    input[component="#{$component}"],
+    .button[component="#{$component}"],
+    a.button[component="#{$component}"],
+    button[component="#{$component}"]{
+        display: #{$display};
+        width: #{$width};
+        margin: #{$margin};
+        padding: #{$padding};
+        text-transform: #{$texttransform};
     }
 }

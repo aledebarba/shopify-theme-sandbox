@@ -54,7 +54,7 @@
 /* Dynamic checkout */
 
 .shopify-payment-button__button {
-  border-radius: 0;
+  border-radius: 8px;
   min-height: 4.6rem;
   overflow: hidden;
 }
@@ -138,23 +138,21 @@ fieldset.product-form__input .form__label {
 }
 
 .product-form__input input[type='radio'] + label {
-  border: 0.1rem solid rgba(var(--color-foreground), 0.55);
+  /* border: 0.1rem solid rgba(var(--color-foreground), 0.55); */
   border-radius: 4rem;
   background-color: rgb(var(--color-background));
   color: rgb(var(--color-foreground));
   display: inline-block;
   margin: 0.7rem 0.5rem 0.2rem 0;
-  padding: 1rem 2rem;
-  font-size: 1.4rem;
-  letter-spacing: 0.1rem;
-  line-height: 1;
+  padding: 0.5rem 1rem;
+  font: var(--font-p);
   text-align: center;
-  transition: border var(--duration-short) ease;
+  transition: transform var(--duration-short) ease; 
   cursor: pointer;
 }
 
 .product-form__input input[type='radio'] + label:hover {
-  border: 0.1rem solid rgb(var(--color-foreground));
+  transform: scale(1.2);
 }
 
 .product-form__input input[type='radio']:checked + label {
@@ -234,6 +232,7 @@ a.product__text {
 .product__title {
   word-break: break-word;
   margin-bottom: 1.5rem;
+  font-weight: bolder;
 }
 
 .product__title + .product__text.caption-with-letter-spacing {
@@ -270,7 +269,7 @@ a.product__text {
 }
 
 .product__description-title {
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .product--no-media .product__title,
