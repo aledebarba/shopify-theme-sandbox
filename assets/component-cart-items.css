@@ -24,8 +24,7 @@
 }
 
 .cart-item__details {
-  font-size: 1.6rem;
-  line-height: 1.4;
+  font: var(--font-p);
 }
 
 .cart-item__details > * {
@@ -72,8 +71,7 @@
 }
 
 .product-option {
-  font-size: 1.6rem;
-  line-height: 1.5;
+  font: var(--font-p);
 }
 
 .cart-item cart-remove-button {
