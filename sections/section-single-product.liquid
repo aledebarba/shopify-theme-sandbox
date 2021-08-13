@@ -3,25 +3,25 @@
 {%- comment -%} Get the backgrond image reference {%- endcomment -%}
 {% if this.layout=='pipe_bottom' %}
 {% capture layoutbg %}
-url('{{ 'bottom-pipe.svg' | file_url }}')
+url("{{ 'bottom-pipe.svg' | file_url }}")
 {% endcapture %}
 {% endif %}
 
 {% if this.layout=='pipe_corner' %}
 {% capture layoutbg %}
-url('{{ 'corner-pipe.svg' | file_url }}')
+url("{{ 'corner-pipe.svg' | file_url }}")
 {% endcapture %}
 {% endif %}
 
 {% if this.layout=='watermark' %}
 {% capture layoutbg %}
-url('{{ 'watermark-alpha-15.png' | file_url }}')
+url("{{ 'watermark-alpha-15.png' | file_url }}")
 {% endcapture %}
 {% endif %}
 
 
-<div class='smallmans single-product' style='--layoutbg:{{ layoutbg }}'>
-    <div class="single-product__container">
+<div class='smallmans sm-single-product' style='--layoutbg:{{ layoutbg }}'>
+    <div class="hold">
         <div class="image">
                 {{ this.product.featured_image | img_url: 'large' | img_tag: this.product.title }}
         </div>
@@ -32,9 +32,10 @@ url('{{ 'watermark-alpha-15.png' | file_url }}')
                     {{ this.product.description }}
                 </div>
                 <div class="price">
-                    {{ currency.symbol }}&nbsp;{{ this.product.price }}
+                   {{ this.product.price | money }}
                 </div>
             </div>
+            <small>Other images</small>
             <div class="other_media">
                 {% for media in this.product.media %}
                     {% case media.media_type %}
@@ -61,7 +62,7 @@ url('{{ 'watermark-alpha-15.png' | file_url }}')
                     {% endcase %}
                 {% endfor %}
             </div>
-            <a href="" class="button primary"></a>
+            <a href="" class="button" theme='blue'>Read More...</a>
         </div>
     </div>
 </div>

@@ -1,20 +1,47 @@
 {%- comment -%}
     receives
-        product
-        color
+        product: objetc,
+        color: "gray",
+        buttontheme: "black",
+        component: "default",
+        showReadMore: "true",
+        showAddToCart: "true"
 {%- endcomment -%}
 
+{% case color %}
+{% when 'blue' %}
+{% assign buttontheme = 'orange' %}
+{% when 'orange' %}
+{% assign buttontheme = 'blue' %}
+{% when 'gray' %}
+{% assign buttontheme = 'black' %}
+{% when 'white' %}
+{% assign buttontheme = 'black' %}
+{% when 'black' %}
+{% assign buttontheme = 'gray' %}
+{% endcase %}
+
 <div class="product-card__column">
-    <div class="smallmans__product-card" theme="{{ color }}">
+    <div class="smallmans__product-card" 
+         color="{{color}}" 
+         theme="{{color}}" 
+         component="{{component}}" 
+         >
       <div class="card__image">
           {{ product.featured_image | img_url: 'large' | img_tag:product.title }}
         </div>
       <div class="card__text">
-        <h1 class='title'>{{ product.title }}</h1>
-        <p class='price'>{{ product.price }}</p>
+        <h1 class='title'>{{ product.title | truncate:69 }}</h1>
+        <p class='price'>{{- product.price | money -}}</p>
       </div>
       <div class="action__buttons">
-        <a href="{{ product.link }}" class="default">Read More</a>
+        <a href="{{product.url}}" class="button small" theme='{{buttontheme}}' showme='{{readMore}}'>Read More</a>
+        {%render "addtocart", 
+          product:product, 
+          theme:{{buttontheme}}, 
+          classes:"small", 
+          showme:{{addToCart}} 
+        %}
       </div>
     </div>
   </div>

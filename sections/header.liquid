@@ -43,6 +43,7 @@
     display: flex;
     align-items: center;
     font: var(--font-menu-item);
+    font-size: calc(var(--font--size) / calc(var(--menu-lenght) /3));
   }
 
   .list-menu__item--link {
@@ -297,7 +298,7 @@
       <nav class="header__inline-menu">
         <ul class="list-menu list-menu--inline" role="list">
           {%- for link in section.settings.menu.links -%}
-            <li>
+            <li style="--menu-lenght:{{section.settings.menu.links.size}};">
               {%- if link.links != blank -%}
                 <details-disclosure>
                   <details>
@@ -335,7 +336,10 @@
                   </details>
                 </details-disclosure>
               {%- else -%}
-                <a href="{{ link.url }}" class="header__menu-item header__menu-item list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
+                <a href="{{ link.url }}" 
+                   class="header__menu-item header__menu-item list-menu__item link link--text focus-inset"
+                   {% if link.current %} aria-current="page" {% endif %}
+                   >
                   <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                 </a>
               {%- endif -%}

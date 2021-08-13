@@ -1,6 +1,11 @@
 
 .smallmans__header-hero {        
-
+    width: 100%;
+    width: 100vw;
+    max-width: 100vw;
+    overflow: hidden;
+    background-image: linear-gradient(135deg, white 60%, #4446);
+    
     .flickity-slider {
         display: flex;
         align-items: center;
@@ -14,9 +19,11 @@
       }
 
     .flickity-hero-carousel {
-        background-image: linear-gradient(135deg, white 60%, #4446);
-        width: 100%;
-        @include responsive(max-width, (1921px: 75vh));
+        
+        width: 95%;
+        @include responsive(max-width, (2000px: 90%vw, 2400px:85%));
+        margin: 0 auto;
+
         .slide {
             width: 100%;
             display: flex;
@@ -31,12 +38,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                @media screen and (min-width: 1921px) {
-                    max-height: 75%;
-                    height: 75%;
-                    width: auto;
-                }
-                
+              
                 img {
                     width: 80%;
                 }

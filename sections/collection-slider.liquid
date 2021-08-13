@@ -2,32 +2,16 @@
     assign this = section.settings
 %}
 
-  <h1 class='slider__title'>{{ this.title }}</h1>
-  <div class="smallmans__collection__slider" style="background-color: {{ sliderBgColor }}!important; --bg-style: var(--bg-{{- this.style -}} ); --h1-style: var(--h1-{{- this.style -}} ); --span-style: var(--span-{{- this.style -}} ); --p-style: var(--p-{{- this.style -}} );" >  
-      {%- for product in this.collection.products -%}
-        <div class='smallmans__collection__slider-card'>
-          <div class='flickity-card'>
-            <div class="image">
-              {{ product.featured_image.src | img_url:"large" | img_tag: product.title }}
-            </div>
-            <div class="text">
-              <h1 class="title">
-                {{ product.title }}
-              </h1>
-              <span class="description">
-                {{ product.description | strip_html | truncate: 100, '...' }}
-              </span>
-              <p class="price">
-                $&nbsp;{{ product.price }}
-              </p>
-            </div>
-            <a href="{{ product.url }}" class='button primary small'>
-              Read More            
-            </a>
-          </div>
+<div class="collection-slider__holder" theme="{{this.color}}">
+  <h1 class='slider__title' theme="{{this.color}}">{{ this.title }}</h1>
+  <div class="smallmans__collection__slider"  theme="{{this.color}}">  
+       {% for currentProduct in this.collection.products limit:8 %}
+        <div class="slider__card">
+           {% render 'smallmans-product-card', product:currentProduct, color:this.color, component:"slider", readMore:"true", addToCart:"false" %}
         </div>
-      {%- endfor -%}
+        {% endfor %}
   </div>
+</div>
 
 {% schema %}
 {
@@ -43,12 +27,12 @@
     },
     {
       "type": "radio",
-      "id": "style",
-      "label": "Card Color",
+      "id": "color",
+      "label": "Color Theme",
       "default": "white",
       "options": [
         { "value": "blue", "label":"Blues" },
-        { "value": "orange", "label":"Reds" },
+        { "value": "orange", "label":"Oranges" },
         { "value": "gray", "label":"Grays" },
         { "value": "white", "label":"White" }
       ]
@@ -70,7 +54,7 @@
 {% javascript %}
   var elem = document.querySelector('.smallmans__collection__slider');
   var flkty = new Flickity( elem, {
-    cellAlign: 'left',
+    cellAlign: 'center',
     wrapAround: true,
     autoPlay: 3000,
     setGallerySize: true,

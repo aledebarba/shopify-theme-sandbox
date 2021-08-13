@@ -45,7 +45,7 @@
                   <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
                 {%- endif -%}
               </div>
-              <button type="submit" class="newsletter__button button" name="commit">
+              <button type="submit" class="smallmans button primary" name="commit">
                 {{ 'newsletter.button_label' | t }}
               </button>
               {%- if form.posted_successfully? -%}

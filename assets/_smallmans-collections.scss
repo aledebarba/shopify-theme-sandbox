@@ -37,6 +37,7 @@
     background-repeat: no-repeat;
     background-position: 0px calc(100% - 32px);
     background-size: 50%;
+    padding-bottom: 132px;
 }
 
 .layoutbg-pipe_corner,
@@ -45,6 +46,10 @@
     background-repeat: no-repeat;
     background-position: calc(100% - 32px) calc(100% - 32px);
     background-size: 100%;
+    padding-bottom: 104px;
+    .product-cards__container {
+      width: calc(var(--max-container-width) - 164px) !important;
+    }
 }
 
 .layoutbg-watermark,
@@ -62,12 +67,12 @@
 
 .smallmans.single-collection.blue,
 .smallmans.single-collection[theme="blue"] {
-  --background-color: var(--theme-color--secondary);
+  --background-color: var(--theme-blue-light);
   --text-color: var(--theme-white);
 }
 .smallmans.single-collection.orange,
 .smallmans.single-collection[theme="orange"] {
-  --background-color: var(--theme-color--primary);
+  --background-color: var(--theme-orange-light);
   --text-color: var(--theme-white);
 }
 .smallmans.single-collection.gray,
@@ -79,19 +84,4 @@
 .smallmans.single-collection[theme="transparent"] {
   --background-color: transparent;
   --text-color: var(--theme-black);
-}
-
-
-.layout-pipe-bottom,
-.smallmans.single-collection[layout='pipe-bottom']{
-    background-image: url();
-    background-position: bottom left;
-    background-repeat: no-repeat;
-}
-
-.layout-pipe-corner,
-.smallmans.single-collection[layout='pipe-corner']{
-    background-image: url();
-    background-position: bottom left;
-    background-repeat: no-repeat;
 }

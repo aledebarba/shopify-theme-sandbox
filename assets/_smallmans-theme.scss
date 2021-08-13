@@ -7,12 +7,15 @@
     --theme-blue: #20409A;
     --theme-blue-dark: #163372;
     --theme-red: #EE2B24;
+    --theme-orange-light: #e95a3a;
     --theme-orange: #EE4824;
+    --theme-orange-dark: #a82f13;
     --theme-white: #FFFFFF;
     --theme-gray-bright: #E4E7ED;
     --theme-gray-warm: #DED9D5;
     --theme-gray-cold: #EFF6F9;
     --theme-gray-medium: #727A8B;
+    --theme-gray: #727A8B;
     --theme-gray-dark: #404349;
     --theme-black: #222;
     --theme-yellow: #FECA2F;
@@ -43,8 +46,8 @@
     --font-h3: normal normal normal calc(var(--font--size) * 1.2)/1 var(--font--family); 
     --font-h4: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family); 
     --font-button: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family); 
-    --font-button-small: normal normal bold calc(var(--font--size) * 0.5)/1 var(--font--family); 
-    --font-button-large: normal normal bold calc(var(--font--size) * 1.2)/1 var(--font--family); 
+    --font-button-small: normal normal bold calc(var(--font--size) * 0.4)/1 var(--font--family); 
+    --font-button-large: normal normal bold calc(var(--font--size) * 1)/1 var(--font--family); 
     --font-menu-main:   normal normal bold calc(var(--font--size) * 1.2)/1 var(--font--family); 
     --font-card-h1: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family); 
     --font-card-h2: normal normal normal calc(var(--font--size) * 0.8)/1 var(--font--family); 
@@ -105,49 +108,55 @@
     a { 
         font: var(--font-p);
         text-decoration: none;
-        text-transform: uppercase;
     }
 
+    input[name="add"],
     button,
     .button {
         display: inline-flex;
         justify-content: center;
         align-items: center;
         border-radius: 8px;
-        border: 0 solid transparent;
-        outline: 0 solid transparent;
+        border: 0;
+        outline: 0;
         box-shadow: 0 0 0 0 transparent;
         font: var(--font-button);
         text-align: center;
         transition: all var(--smallmans-duration) linear;
         cursor: pointer;
+        padding: calc(var(--font--size)/2.5) calc(var(--font--size)/2);
         height: fit-content;
-        padding: var(--font--size);
+        width: fit-content;
     }
 
+    input[name="add"].primary,
     button.primary,
     .button.primary {
         background-color: var(--theme-color--primary);
         color: var(--theme-color--text-inverse);
     }
+    input[name="add"].secondary,
     button.secondary,
     .button.secondary {
         background-color: var(--theme-color--secondary);
         color: var(--theme-color--text-inverse);
     }
 
+    input[name="add"].outline,
     button.outline,
     .button.outline { 
         background-color: transparent;
         border: 2px solid var(--theme-color--primary);
         color: var(--theme-color--primary) !important;
     }
+    input[name="add"].outline.invert,
     button.outline.invert,
     .button.outline.invert {
         background-color: transparent;
         border: 2px  solid var(--theme-color--text-inverse) !important;
         color: var(--theme-color--text-inverse) !important;
     }
+    input[name="add"].outline.secondary,
     button.outline.secondary,
     .button.outline.secondary {
         background-color: transparent;
@@ -155,23 +164,26 @@
         color: var(--theme-color--secondary);
     }
 }
+input[name="add"].small,
 button.small,
 .button.small { 
     font: var(--font-button-small);
-    letter-spacing: 0.1em;
     text-transform: uppercase;
 }
+input[name="add"].large,
 button.large,
 .button.large {
-    font-size: 1.2rem;
-    padding: 20px 32px;
+    font-size: var(--font-button-large);
+} 
 
+input[name="add"]:hover,
+.button:hover,
 button:hover,
 a:hover {
         box-shadow: 0px 0px 5px 0px #0008 !important;
+        outline: 0;
         transition: all var(--smallmans-duration) linear;
     }
-}
 
 .smallmans__content {
     * { box-sizing: border-box };
@@ -180,4 +192,21 @@ a:hover {
     padding: 0;
     margin: 0 auto;
     @include responsive(width, ( 1200px: 90%, 1440px: 85%, 1920px: 1800px ));
+}
+
+$buttonThemes: 
+"blue" "var(--theme-blue)" "var(--theme-white)",
+"orange" "var(--theme-orange)" "var(--theme-white)",
+"gray" "var(--theme-gray-warm)" "var(--theme-black)",
+"white" "white" "var(--theme-black)",
+"black" "var(--theme-gray-dark)" "white";
+
+@each $color, $bg, $text in $buttonThemes {
+    input[theme="#{$color}"],
+    .button[theme="#{$color}"],
+    a.button[theme="#{$color}"],
+    button[theme="#{$color}"]{
+      background-color: #{$bg} !important;
+      color: #{$text} !important;
+    }
 }

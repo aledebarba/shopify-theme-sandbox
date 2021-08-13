@@ -27,7 +27,7 @@ url('{{ 'watermark-alpha-15.png' | file_url }}')
 {% endcapture %}
 {% endif %}
 
-<div class='smallmans single-collection' theme='{{ this.color }}' layout='{{this.layout}}' style="--layoutbg: {{ layoutbg }}">
+<div class='smallmans single-collection' theme='{{this.color}}' layout='{{this.layout}}' style="--layoutbg: {{ layoutbg }}">
         <div class="single-collection__header">
                 <div class="collection-title">
                     <h4>{{ this.title }}</h4>
@@ -38,8 +38,8 @@ url('{{ 'watermark-alpha-15.png' | file_url }}')
                 </a>
         </div>
         <div class="product-cards__container">
-            {% for item in this.collection.products limit:8 %}
-                {% render 'smallmans-product-card', product:item, color:this.card_color %}
+            {% for currentProduct in this.collection.products limit:8 %}
+                {% render 'smallmans-product-card', product:currentProduct, component:'collection', addToCart:'true', readMore:'true', color:this.cardcolor %}
             {% endfor %}
         </div>
 </div>
@@ -116,7 +116,7 @@ url('{{ 'watermark-alpha-15.png' | file_url }}')
         },
         {
             "type": "radio",
-            "id": "card_color",
+            "id": "cardcolor",
             "label": "Cards Style",
             "default": "gray",
             "options": [
@@ -133,8 +133,8 @@ url('{{ 'watermark-alpha-15.png' | file_url }}')
                     "label": "Oranges"
                 },
                 {
-                    "value": "transparent",
-                    "label": "Transparent"
+                    "value": "white",
+                    "label": "Whites"
                 }
             ]
         }

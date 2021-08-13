@@ -1,7 +1,7 @@
 <div class='smallmans smallmans__header-hero'>
   <div class='flickity-hero-carousel'>
   {% for product in section.settings.collection.products %}
-      <div class='slide'>
+      <div class='slide' style='outline: 0; border: 0;'>
         <div class='slide__product-image'>
           {{ product | img_url: "800x800" | img_tag }}
         </div>
@@ -9,7 +9,7 @@
           <h1>{{ product.title }}</h1>
           {{ product.description }}
           <a href='{{ product.url }}'>
-          <button class='secondary'>Read More</button>
+            <button class='secondary'>Read More</button>
           </a>
         </div>
       </div>
@@ -48,7 +48,7 @@ property "id" - inside settings, is the object
 {% javascript %}
   var elem = document.querySelector('.flickity-hero-carousel');
   var flkty = new Flickity( elem, {
-    cellAlign: 'left',
+    cellAlign: 'center',
     wrapAround: true,
     autoPlay: 3000,
     contain: true,
