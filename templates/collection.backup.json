@@ -4,7 +4,7 @@
       "type": "main-collection-banner"
     },
     "product-grid": {
-      "type": "smallmans-main-collection-product-grid"
+      "type": "main-collection-product-grid"
     }
   },
   "order": [

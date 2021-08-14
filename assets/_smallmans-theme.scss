@@ -33,45 +33,42 @@
     --smallmans-duration: 300ms;
 
     --font--family: 'Nunito', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    --font-min: 16; /* font min size */
-    --font-max: 32; /* font max size */
-    --font-min-clamp: 320; /* font stops shrinking */
-    --font-max-clamp: 1600; /* font stops growing */
-    --base-line-height: 1.1;
-    --font-p: normal normal normal var(--font--size)/1 var(--font--family); 
-    --font-menu-item: normal normal 900 var(--font--size)/1 var(--font--family); 
-    --font-small: normal normal normal calc(var(--font--size) * 0.6)/1 var(--font--family); 
-    --font-h1: normal normal bold calc(var(--font--size) * 2)/1 var(--font--family); 
-    --font-h2: normal normal bold calc(var(--font--size) * 1.8)/1 var(--font--family) ;
-    --font-h3: normal normal normal calc(var(--font--size) * 1.2)/1 var(--font--family); 
-    --font-h4: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family); 
-    --font-button: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family); 
-    --font-button-small: normal normal bold calc(var(--font--size) * 0.4)/1 var(--font--family); 
-    --font-button-large: normal normal bold calc(var(--font--size) * 1)/1 var(--font--family); 
-    --font-menu-main:   normal normal bold calc(var(--font--size) * 1)/1 var(--font--family); 
-    --font-card-h1: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family); 
-    --font-card-h2: normal normal normal calc(var(--font--size) * 0.8)/1 var(--font--family); 
-    --font-card-price: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family); 
-    --font-card-text: normal normal normal calc(var(--font--size) * 0.8)/1 var(--font--family); 
 
-    
-    --font--size: calc( var(--font-min) *1px);
-    @media (min-width: 320px) { 
-        --font--size: calc( calc(var(--font-min) * 1px) + (var(--font-max) - var(--font-min)) * ( (100vw - calc(var(--font-min-clamp) * 1px)) / (var(--font-max-clamp) - var(--font-min-clamp)) ) );  }    @media (min-width: 1600px) { font-size: 32px; 
-        }
-    @media (min-width: 1440px) {
-        --font--size: calc( var(--font-max) *1px );
+    --font-p: normal normal normal var(--font-size)/1.1 var(--font--family); 
+    --font-input: normal normal bold calc(var(--font-size)*0.8)/1.1 var(--font--family); 
+    --font-menu-item: normal normal 900 var(--font-size)/1.1 var(--font--family); 
+    --font-small: normal normal bold calc(var(--font-size) * 0.4)/1 var(--font--family); 
+    --font-h1: normal normal bold calc(var(--font-size) * 2)/1.1 var(--font--family); 
+    --font-hero: normal normal 900 calc(var(--font-size) * 4)/1.1 var(--font--family); 
+    --font-h2: normal normal bold calc(var(--font-size) * 1.8)/1.1 var(--font--family) ;
+    --font-h3: normal normal bold calc(var(--font-size) * 1.2)/1.1 var(--font--family); 
+    --font-h4: normal normal bold calc(var(--font-size) * 0.8)/1.1 var(--font--family); 
+    --font-h5: normal normal bold calc(var(--font-size) * 0.5)/1.1 var(--font--family); 
+    --font-button: normal normal bold calc(var(--font-size) * 0.8)/1.1 var(--font--family); 
+    --font-button-small: normal normal bold calc(var(--font-size) * 0.4)/1.1 var(--font--family); 
+    --font-button-large: normal normal bold calc(var(--font-size) * 1)/1.1 var(--font--family); 
+    --font-menu-main:   normal normal bold calc(var(--font-size) * 1)/1.1 var(--font--family); 
+    --font-card-h1: normal normal bold calc(var(--font-size) * 0.8)/1.1 var(--font--family); 
+    --font-card-h2: normal normal normal calc(var(--font-size) * 0.8)/1.1 var(--font--family); 
+    --font-card-price: normal normal bold calc(var(--font-size) * 0.8)/1.1 var(--font--family); 
+    --font-card-text: normal normal normal calc(var(--font-size) * 0.8)/1.1 var(--font--family); 
+
+    //base font size
+    --font-size: 20px;
+    @media screen and (min-width: 1200px) {
+        --font-size: 28px;
     }
+
+    --font-regular: 400;
+    --font-normal: var(--font-regular);
+    --font-bold: 700;
+    --font-bolder: 900;
+
 }
 
-* {
-    box-sizing: border-box;
-}
-
-*:focus, *:focus-visible {
-    outline: 0 !important;
-    border: 0 !important;
-    box-shadow: 0;
+body {
+    font-size: var(--font-size);
+    line-height: 1.1;
 }
 
 .smallmans {
@@ -98,6 +95,12 @@
         text-transform: uppercase;
     }
 
+    h5 {
+        font: var(--font-h4);
+        font-weight: var(--font-bolder);
+        text-transform: uppercase;
+    }
+
     small {
         font: var(--font-small);
     }
@@ -108,7 +111,7 @@
 
     strong {
         font: var(--font-p);
-        font-weight: bolder;
+        font-weight:var(--font-bolder);
     }
         
     a { 
@@ -123,16 +126,16 @@
         justify-content: center;
         align-items: center;
         border-radius: 8px;
+        font: var(--font-button);
+        text-align: center;
+        cursor: pointer;
+        padding: calc(var(--font-size)/2.5) calc(var(--font-size)/2);
+        height: fit-content;
+        width: fit-content;
+        transition: all var(--smallmans-duration) linear;
         border: 0;
         outline: 0;
         box-shadow: 0 0 0 0 transparent;
-        font: var(--font-button);
-        text-align: center;
-        transition: all var(--smallmans-duration) linear;
-        cursor: pointer;
-        padding: calc(var(--font--size)/2.5) calc(var(--font--size)/2);
-        height: fit-content;
-        width: fit-content;
     }
 
     input[name="add"].primary,
@@ -194,8 +197,8 @@ button.large,
 input[name="add"]:hover,
 .button:hover,
 button:hover,
-a:hover {
-        //box-shadow: 0px 0px 5px 0px #0008 !important;
+a.button:hover {
+        box-shadow: 0px 0px 5px 0px #0008 !important;
         outline: 0;
         transition: all var(--smallmans-duration) linear;
     }
@@ -208,6 +211,15 @@ a:hover {
     margin: 0 auto;
     @include responsive(width, ( 1200px: 90%, 1440px: 85%, 1920px: 1800px ));
 }
+
+// product-card__column customizations
+
+.product-card__column[component="productgrid"],
+.product-card__column[component="productrecommendation"]{
+    min-width: 210px;
+}
+
+// tags customizations based on attributes
 
 $buttonThemes: 
 "blue" "var(--theme-blue)" "var(--theme-white)",

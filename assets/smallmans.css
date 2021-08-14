@@ -181,61 +181,40 @@ body {
   --theme-section-margin: 64px 0px;
   --smallmans-duration: 300ms;
   --font--family: 'Nunito', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  --font-min: 16;
-  /* font min size */
-  --font-max: 32;
-  /* font max size */
-  --font-min-clamp: 320;
-  /* font stops shrinking */
-  --font-max-clamp: 1600;
-  /* font stops growing */
-  --base-line-height: 1.1;
-  --font-p: normal normal normal var(--font--size)/1 var(--font--family);
-  --font-menu-item: normal normal 900 var(--font--size)/1 var(--font--family);
-  --font-small: normal normal normal calc(var(--font--size) * 0.6)/1 var(--font--family);
-  --font-h1: normal normal bold calc(var(--font--size) * 2)/1 var(--font--family);
-  --font-h2: normal normal bold calc(var(--font--size) * 1.8)/1 var(--font--family) ;
-  --font-h3: normal normal normal calc(var(--font--size) * 1.2)/1 var(--font--family);
-  --font-h4: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family);
-  --font-button: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family);
-  --font-button-small: normal normal bold calc(var(--font--size) * 0.4)/1 var(--font--family);
-  --font-button-large: normal normal bold calc(var(--font--size) * 1)/1 var(--font--family);
-  --font-menu-main:   normal normal bold calc(var(--font--size) * 1)/1 var(--font--family);
-  --font-card-h1: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family);
-  --font-card-h2: normal normal normal calc(var(--font--size) * 0.8)/1 var(--font--family);
-  --font-card-price: normal normal bold calc(var(--font--size) * 0.8)/1 var(--font--family);
-  --font-card-text: normal normal normal calc(var(--font--size) * 0.8)/1 var(--font--family);
-  --font--size: calc( var(--font-min) *1px);
+  --font-p: normal normal normal var(--font-size)/1.1 var(--font--family);
+  --font-input: normal normal bold calc(var(--font-size)*0.8)/1.1 var(--font--family);
+  --font-menu-item: normal normal 900 var(--font-size)/1.1 var(--font--family);
+  --font-small: normal normal bold calc(var(--font-size) * 0.4)/1 var(--font--family);
+  --font-h1: normal normal bold calc(var(--font-size) * 2)/1.1 var(--font--family);
+  --font-hero: normal normal 900 calc(var(--font-size) * 4)/1.1 var(--font--family);
+  --font-h2: normal normal bold calc(var(--font-size) * 1.8)/1.1 var(--font--family) ;
+  --font-h3: normal normal bold calc(var(--font-size) * 1.2)/1.1 var(--font--family);
+  --font-h4: normal normal bold calc(var(--font-size) * 0.8)/1.1 var(--font--family);
+  --font-h5: normal normal bold calc(var(--font-size) * 0.5)/1.1 var(--font--family);
+  --font-button: normal normal bold calc(var(--font-size) * 0.8)/1.1 var(--font--family);
+  --font-button-small: normal normal bold calc(var(--font-size) * 0.4)/1.1 var(--font--family);
+  --font-button-large: normal normal bold calc(var(--font-size) * 1)/1.1 var(--font--family);
+  --font-menu-main:   normal normal bold calc(var(--font-size) * 1)/1.1 var(--font--family);
+  --font-card-h1: normal normal bold calc(var(--font-size) * 0.8)/1.1 var(--font--family);
+  --font-card-h2: normal normal normal calc(var(--font-size) * 0.8)/1.1 var(--font--family);
+  --font-card-price: normal normal bold calc(var(--font-size) * 0.8)/1.1 var(--font--family);
+  --font-card-text: normal normal normal calc(var(--font-size) * 0.8)/1.1 var(--font--family);
+  --font-size: 20px;
+  --font-regular: 400;
+  --font-normal: var(--font-regular);
+  --font-bold: 700;
+  --font-bolder: 900;
 }
 
-@media (min-width: 320px) {
+@media screen and (min-width: 1200px) {
   :root {
-    --font--size: calc( calc(var(--font-min) * 1px) + (var(--font-max) - var(--font-min)) * ( (100vw - calc(var(--font-min-clamp) * 1px)) / (var(--font-max-clamp) - var(--font-min-clamp)) ) );
+    --font-size: 28px;
   }
 }
 
-@media (min-width: 1600px) {
-  :root {
-    font-size: 32px;
-  }
-}
-
-@media (min-width: 1440px) {
-  :root {
-    --font--size: calc( var(--font-max) *1px );
-  }
-}
-
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-*:focus, *:focus-visible {
-  outline: 0 !important;
-  border: 0 !important;
-  -webkit-box-shadow: 0;
-          box-shadow: 0;
+body {
+  font-size: var(--font-size);
+  line-height: 1.1;
 }
 
 .smallmans {
@@ -262,6 +241,12 @@ body {
   text-transform: uppercase;
 }
 
+.smallmans h5 {
+  font: var(--font-h4);
+  font-weight: var(--font-bolder);
+  text-transform: uppercase;
+}
+
 .smallmans small {
   font: var(--font-small);
 }
@@ -272,7 +257,7 @@ body {
 
 .smallmans strong {
   font: var(--font-p);
-  font-weight: bolder;
+  font-weight: var(--font-bolder);
 }
 
 .smallmans a {
@@ -293,22 +278,22 @@ body {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 8px;
-  border: 0;
-  outline: 0;
-  -webkit-box-shadow: 0 0 0 0 transparent;
-          box-shadow: 0 0 0 0 transparent;
   font: var(--font-button);
   text-align: center;
-  -webkit-transition: all var(--smallmans-duration) linear;
-  transition: all var(--smallmans-duration) linear;
   cursor: pointer;
-  padding: calc(var(--font--size)/2.5) calc(var(--font--size)/2);
+  padding: calc(var(--font-size)/2.5) calc(var(--font-size)/2);
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  -webkit-transition: all var(--smallmans-duration) linear;
+  transition: all var(--smallmans-duration) linear;
+  border: 0;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0 transparent;
+          box-shadow: 0 0 0 0 transparent;
 }
 
 .smallmans input[name="add"].primary,
@@ -374,7 +359,9 @@ button.large,
 input[name="add"]:hover,
 .button:hover,
 button:hover,
-a:hover {
+a.button:hover {
+  -webkit-box-shadow: 0px 0px 5px 0px #0008 !important;
+          box-shadow: 0px 0px 5px 0px #0008 !important;
   outline: 0;
   -webkit-transition: all var(--smallmans-duration) linear;
   transition: all var(--smallmans-duration) linear;
@@ -409,6 +396,11 @@ a:hover {
   .smallmans__content {
     width: 1800px;
   }
+}
+
+.product-card__column[component="productgrid"],
+.product-card__column[component="productrecommendation"] {
+  min-width: 210px;
 }
 
 input[theme="blue"],

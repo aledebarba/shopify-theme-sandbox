@@ -151,6 +151,7 @@ html.no-js .no-js-hidden {
 
 .page-width {
   max-width: 120rem;
+  max-width: 90vw;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -182,6 +183,7 @@ html.no-js .no-js-hidden {
 
   .page-width-desktop {
     max-width: 120rem;
+    max-width: 90vw;
     padding: 0 5rem;
   }
 }
@@ -299,46 +301,46 @@ h1 { font: var(--font-h1); }
 h2 { font: var(--font-h2); }
 h3 { font: var(--font-h3); }
 h4, h5, h0 { font: var(--font-h4); }
-/* 
+
 @media only screen and (min-width: 750px) {
   .h0 {
-    font-size: 5.2rem;
+    --font-overwrited: 5.2rem;
   }
 }
 
 h1,
 .h1 {
-  font-size: 3rem;
+  --font-overwrited: 3rem;
 }
 
 @media only screen and (min-width: 750px) {
   h1,
   .h1 {
-    font-size: 4rem;
+    --font-overwrited: 4rem;
   }
 }
 
 h2,
 .h2 {
-  font-size: 2rem;
+  --font-overwrited: 2rem;
 }
 
 @media only screen and (min-width: 750px) {
   h2,
   .h2 {
-    font-size: 2.4rem;
+    --font-overwrited: 2.4rem;
   }
 }
 
 h3,
 .h3 {
-  font-size: 1.7rem;
+  --font-overwrited: 1.7rem;
 }
 
 @media only screen and (min-width: 750px) {
   h3,
   .h3 {
-    font-size: 1.8rem;
+    --font-overwrited: 1.8rem;
   }
 }
 
@@ -346,18 +348,18 @@ h4,
 .h4 {
   font-family: var(--font-heading-family);
   font-style: var(--font-heading-style);
-  font-size: 1.5rem;
+  font: var(--font-button);
 }
 
 h5,
 .h5 {
-  font-size: 1.2rem;
+  font: var(--font-button-small);
 }
 
 @media only screen and (min-width: 750px) {
   h5,
   .h5 {
-    font-size: 1.3rem;
+    --font-overwrited: 1.3rem;
   }
 }
 
@@ -366,7 +368,7 @@ h6,
   color: rgba(var(--color-foreground), 0.75);
   margin-block-start: 1.67em;
   margin-block-end: 1.67em;
-} */
+}
 
 blockquote {
   font-style: italic;
@@ -383,22 +385,22 @@ blockquote {
 
 .caption {
   font: var(--font-p);
-  /* font-size: 1rem;
+  --font-overwrited: 1rem;
   letter-spacing: 0.07rem;
-  line-height: 1.7; */
+  line-height: 1.7;
 }
 
 @media screen and (min-width: 750px) {
   .caption {
     font: var(--font-p);
-    /* font-size: 1.2rem; */
+    font: var(--font-button-small);
   }
 }
 
 .caption-with-letter-spacing {
-  /* font-size: 1rem;
+  --font-overwrited: 1rem;
   letter-spacing: 0.13rem;
-  line-height: 1.2; */
+  line-height: 1.2;
   font: var(--font-p);
   text-transform: uppercase;
 }
@@ -409,9 +411,9 @@ blockquote {
 .field__input,
 .form__label,
 .select__select {
-  /* font-size: 1.3rem;
+  --font-overwrited: 1.3rem;
   line-height: 1.5;
-  letter-spacing: 0.04rem; */
+  letter-spacing: 0.04rem;
   font: var(--font-p);
 }
 
@@ -504,7 +506,7 @@ h6:empty {
   text-underline-offset: 0.3rem;
   color: rgb(var(--color-link));
   background-color: transparent;
-  font-size: 1.4rem;
+  font: var(--font-button);
 }
 
 .link--text {
@@ -658,18 +660,18 @@ summary::-webkit-details-marker {
 */
 
 *:focus-visible {
-  /* outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 0.3rem; 
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
-    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);*/
+    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 /* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
 *:focus {
-  /* outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 0.3rem; 
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
-    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);*/
+    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 /* Negate the fallback side-effect for browsers that support :focus-visible */
@@ -683,16 +685,16 @@ summary::-webkit-details-marker {
 */
 
 .focus-inset:focus-visible {
-  /* outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: -0.2rem;
-  box-shadow: 0 0 0.2rem 0 rgba(var(--color-foreground), 0.3); */
+  box-shadow: 0 0 0.2rem 0 rgba(var(--color-foreground), 0.3);
 }
 
 /* Fallback */
 .focus-inset:focus {
-  /* outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: -0.2rem;
-  box-shadow: 0 0 0.2rem 0 rgba(var(--color-foreground), 0.3); */
+  box-shadow: 0 0 0.2rem 0 rgba(var(--color-foreground), 0.3);
 }
 
 .focus-inset:focus:not(:focus-visible) {
@@ -798,9 +800,7 @@ summary::-webkit-details-marker {
 }
 
 .subtitle {
-  font-size: 1.8rem;
-  line-height: 1.8;
-  letter-spacing: 0.05rem;
+  font: var(--font-h2);
   color: rgba(var(--color-foreground), 0.7);
 }
 
@@ -1074,27 +1074,27 @@ deferred-media {
 }
 
 .button:focus-visible {
-  /* box-shadow: 0 0 0 0.1rem rgba(var(--color-button), var(--alpha-button-border)),
+  box-shadow: 0 0 0 0.1rem rgba(var(--color-button), var(--alpha-button-border)),
     0 0 0 0.3rem rgb(var(--color-background)),
-    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3); */
+    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 .button:focus {
-  /* box-shadow: 0 0 0 0.1rem rgba(var(--color-button), var(--alpha-button-border)),
+  box-shadow: 0 0 0 0.1rem rgba(var(--color-button), var(--alpha-button-border)),
     0 0 0 0.3rem rgb(var(--color-background)),
-    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3); */
+    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 .button-label,
 .shopify-challenge__button,
 .customer button {
-  font-size: 1.5rem;
+  font: var(--font-button);
   letter-spacing: 0.1rem;
   line-height: 1.2;
 }
 
 .button--tertiary {
-  font-size: 1.2rem;
+  font: var(--font-button-small);
   padding: 1rem 1.5rem;
   min-width: 9rem;
   min-height: 3.5rem;
@@ -1109,7 +1109,7 @@ deferred-media {
 .button:not([disabled]):hover,
 .shopify-challenge__button:hover,
 .customer button:hover {
-  /* box-shadow: 0 0 0 0.2rem rgba(var(--color-button), var(--alpha-button-border)); */
+  box-shadow: 0 0 0 0.2rem rgba(var(--color-button), var(--alpha-button-border)); 
 }
 
 /* Button - other */
@@ -1189,7 +1189,7 @@ deferred-media {
 }
 
 .share-button__message:not(:empty) {
-  font-size: 1.2rem;
+  font: var(--font-button-small);
   text-align: right;
   display: block;
   margin-top: 0.5rem;
@@ -1206,7 +1206,7 @@ deferred-media {
   border: 0;
   border-radius: 0;
   color: rgb(var(--color-foreground));
-  font-size: 1.6rem;
+  font: var(--font-input);
   width: 100%;
   box-shadow: 0 0 0 0.1rem rgba(var(--color-foreground), 0.55);
   height: 4.5rem;
@@ -1218,7 +1218,7 @@ deferred-media {
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
-  font-size: 1.2rem;
+  font: var(--font-button-small);
   color: rgba(var(--color-foreground), 0.75);
 }
 
@@ -1227,23 +1227,23 @@ deferred-media {
 .customer .field input:hover,
 .customer select:hover,
 .localization-form__select:hover {
-  /* box-shadow: 0 0 0 0.2rem rgba(var(--color-foreground), 0.55); */
+  box-shadow: 0 0 0 0.2rem rgba(var(--color-foreground), 0.55); 
 }
 
 .field__input:focus-visible,
 .select__select:focus-visible,
 .field input:focus-visible {
-  /* box-shadow: 0 0 0 0.1rem rgba(var(--color-foreground), 0.55),
+  box-shadow: 0 0 0 0.1rem rgba(var(--color-foreground), 0.55),
     0 0 0 0.3rem rgb(var(--color-background)),
-    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3); */
+    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 .field__input:focus,
 .select__select:focus,
 .field input:focus {
-  /* box-shadow: 0 0 0 0.1rem rgba(var(--color-foreground), 0.55),
+  box-shadow: 0 0 0 0.1rem rgba(var(--color-foreground), 0.55),
     0 0 0 0.3rem rgb(var(--color-background)),
-    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3); */
+    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 .text-area,
@@ -1295,7 +1295,7 @@ deferred-media {
 
 .field__label,
 .customer .field label {
-  font-size: 1.6rem;
+  font: var(--font-small);
   left: 1.5rem;
   top: 1rem;
   margin-bottom: 0;
@@ -1314,7 +1314,7 @@ deferred-media {
 .customer .field input:focus ~ label,
 .customer .field input:not(:placeholder-shown) ~ label,
 .customer .field input:-webkit-autofill ~ label {
-  font-size: 1rem;
+  --font-overwrited: 1rem;
   top: 0.3em;
   letter-spacing: 0.04rem;
 }
@@ -1391,17 +1391,17 @@ input[type='checkbox'] {
 .form__message {
   align-items: center;
   display: flex;
-  font-size: 1.4rem;
+  --font-overwrited: 1.4rem;
   line-height: 1;
   margin-top: 1rem;
 }
 
 .form__message--large {
-  font-size: 1.6rem;
+  --font-overwrited: 1.6rem;
 }
 
 .customer .field .form__message {
-  font-size: 1.4rem;
+  --font-overwrited: 1.4rem;
   text-align: left;
 }
 
@@ -1426,7 +1426,7 @@ input[type='checkbox'] {
 
 .form-status {
   margin: 0;
-  font-size: 1.6rem;
+  --font-overwrited: 1.6rem;
 }
 
 .form-status-list {
@@ -1452,7 +1452,7 @@ input[type='checkbox'] {
 
 .quantity__input {
   color: currentColor;
-  font-size: 1.4rem;
+  --font-overwrited: 1.4rem;
   font-weight: 500;
   opacity: 0.85;
   text-align: center;
@@ -1469,7 +1469,7 @@ input[type='checkbox'] {
 .quantity__button {
   width: 4.5rem;
   flex-shrink: 0;
-  font-size: 1.8rem;
+  --font-overwrited: 1.8rem;
   border: 0;
   background-color: transparent;
   cursor: pointer;
@@ -1577,7 +1577,7 @@ input[type='checkbox'] {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.9rem;
+  --font-overwrited: 0.9rem;
   bottom: 0.8rem;
   left: 2.2rem;
   line-height: 1.1;
