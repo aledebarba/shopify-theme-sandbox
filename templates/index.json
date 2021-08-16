@@ -21,7 +21,7 @@
       "type": "call-to-action",
       "settings": {
         "cta_title": "Read more about",
-        "product": "francis-pegler-3-in-1-boiling-water-kitchen-mixer",
+        "product": "leakmate-emergency-leak-stop-tool",
         "image_position": "left",
         "cta_button_text": "Read More..."
       }
@@ -41,6 +41,20 @@
         "product": "cashel-traditional-free-standing-bath-white-1720-x-776-mm",
         "layout": "pipe_bottom"
       }
+    },
+    "featured-collection-v2": {
+      "type": "smallmans-featured-collection-v2",
+      "settings": {
+        "collection": "bathroom-deals"
+      }
+    },
+    "call-to-action-v2": {
+      "type": "smallmans-calltoaction-v2",
+      "settings": {
+        "title":"Check this collection",
+        "description":"Halvah croissant candy canes bonbon candy. Apple pie jelly beans topping carrot cake danish tart cake cheesecake.",
+        "buttontext":"Read more"
+      }
     }
   },
   "order": [
@@ -48,6 +62,8 @@
     "single_collection",
     "call-to-action",
     "collection-slider",
-    "single-product-with-extras"
+    "single-product-with-extras",
+    "featured-collection-v2",
+    "call-to-action-v2"
   ]
 }

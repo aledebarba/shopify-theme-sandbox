@@ -1,0 +1,104 @@
+{%- assign this = section.settings -%}
+<div class="footer-container">
+    <div class="footer-columns">
+        <div class="about">
+            <div class="logo">
+                {{ this.image | img_url: 'large' | img_tag:"company brand" }}
+            </div>
+            <div class="description">
+                {{ this.about }}
+            </div>
+        </div>
+        <div class="menus">
+            {% if this.firstMenu %}
+                {% render 'smallmans-footer-menu', title:this.firstMenuTitle, menu:this.firstMenu %}
+            {% endif %}
+            {% if this.secondtMenu %}
+                {% render 'smallmans-footer-menu', title:this.secondtMenuTitle, menu:this.secondtMenu %}
+            {% endif %}
+            {% if this.thirdMenu %}
+                {% render 'smallmans-footer-menu', title:this.thirdMenuTitle, menu:this.thirdMenu %}
+            {% endif %}
+            {% if this.fourthMenu %}
+                {% render 'smallmans-footer-menu', title:this.fourthMenuTitle, menu:this.fourthMenu %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="ending">
+        <div class="ending-text">
+            {{ this.endingText }}
+        </div>
+        <div class="cards"></div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "smallmans-footer",
+    "tag": "footer",
+    "class": "smallmans",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Select Footer Logo"
+        },
+        {
+            "type": "textarea",
+            "id": "about",
+            "label": "Short descriptions about the company",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex magnam dignissimos molestiae aliquid. Eveniet fuga in debitis, explicabo itaque ut!"
+        },
+        {
+            "type": "text",
+            "id": "firstMenuTitle",
+            "label": "First menu title",
+            "default": "Quick navigation"
+        },
+        {
+            "type": "link_list",
+            "id": "firstMenu",
+            "label": "First Menu"
+        },
+        {
+            "type": "text",
+            "id": "secondMenuTitle",
+            "label": "Second menu title",
+            "default": "Quick navigation"
+        },
+        {
+            "type": "link_list",
+            "id": "secondMenu",
+            "label": "Second Menu"
+        },
+        {
+            "type": "text",
+            "id": "thirdMenuTitle",
+            "label": "Third menu title",
+            "default": "Quick navigation"
+        },
+        {
+            "type": "link_list",
+            "id": "thirdMenu",
+            "label": "Third Menu"
+        },
+        {
+            "type": "text",
+            "id": "fourthMenuTitle",
+            "label": "Fourth menu title",
+            "default": "Quick navigation"
+        },
+        {
+            "type": "link_list",
+            "id": "fourthMenu",
+            "label": "Fourth Menu"
+        },
+        {
+            "type": "text",
+            "id": "endingText",
+            "label": "Copy right / Policy / Cookies text",
+            "default": "© Shopify Store Name / Privacy Policy / Cookies Management"
+        }
+    ]
+}
+{% endschema %}

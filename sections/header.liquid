@@ -427,6 +427,7 @@
   {%- render 'cart-notification' -%}
 {%- endif -%}
 
+{% render 'header-buttons-menu', menu: section.settings.buttons_menu %}
 {% javascript %}
   class StickyHeader extends HTMLElement {
     constructor() {

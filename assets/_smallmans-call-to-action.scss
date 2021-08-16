@@ -33,3 +33,50 @@
         }
     }
 }
+
+.smallmans {
+    .call-to-action-v2__container {
+        color: var(--theme-white);
+
+        .call-to-action-v2 {
+            background-color: var(--theme-color--secondary);
+            width: 80%;
+            margin: 64px auto;
+            padding: 0 64px;
+            column-gap: 2em;
+            display: grid;
+            grid-template-columns: 55% 45%;
+
+            .text { 
+                align-self: center;
+                display: grid;
+                grid-template-rows: auto auto auto;
+                .title {
+                    font: var(--font-h1);
+                    font-weight: var(--font-bolder);
+                    margin-top: 0;
+                }
+                .description { 
+                    font: var(--font-p);
+                    margin-bottom: 1em;
+                }
+            }
+            
+            .image {
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+                border: 0;
+                overflow: hidden;
+                img { 
+                    width: 100%;
+                    max-height: 480px;
+                    object-fit: cover;
+                    border: 0;
+                }
+             }
+    
+        }
+    }
+}

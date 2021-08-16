@@ -1,0 +1,18 @@
+<div class="horizontal-card__container">
+    <div class="horizontal-card">
+        <div class="image">
+            {{ product.featured_image | img_url: 'large' | img_tag:product.title }}
+        </div>
+        <div class="text">
+            <div class="title">
+                {{ product.title | trucate:30 }}
+            </div>
+            <div class="description">
+                {{ product.descriptions | truncate:60 }}
+            </div>
+            <div class="button-container">
+                <button theme="orange">{{ product.price | money }}</button>
+            </div>
+        </div>
+    </div>
+</div>

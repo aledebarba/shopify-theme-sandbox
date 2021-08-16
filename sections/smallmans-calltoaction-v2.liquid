@@ -1,0 +1,56 @@
+{% assign this = section.settings %}
+
+<div class="call-to-action-v2__container">
+    <div class="call-to-action-v2">
+        <div class="text">
+            <div class="title">
+                {{ this.title }}
+            </div>
+            <div class="description">
+                {{ this.description }}
+            </div>
+            <a href="{{this.link}}" class='button primary'>{{ this.buttontext }}</a>
+        </div>
+        <div class="image">
+            {{ this.image | img_url: 'large' | img_tag }}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "smallmans-calltoaction-v2",
+    "tag": "section",
+    "class": "smallmans",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Select an image"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Call-to-action Title",
+            "default": "Read our Articles"
+        },
+        {
+            "type": "textarea",
+            "id": "description",
+            "label": "Explain a litle about this link.",
+            "default": "Cupidatat ad nulla et cupidatat sint ipsum non. Minim anim duis reprehenderit anim et minim culpa est ad reprehenderit deserunt fugiat est exercitation. Ex ex nulla commodo fugiat fugiat deserunt culpa excepteur. Nulla fugiat eu excepteur adipisicing sint reprehenderit minim eu sunt incididunt."
+        },
+        {
+            "type": "text",
+            "id": "buttontext",
+            "label": "Button label",
+            "default": "Read More"
+        },
+        {
+            "type": "url",
+            "id": "link",
+            "label": "Button Link"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,48 @@
+{%- assign this = section.settings -%}
+
+<div class="featured-collection__container">
+    <div class="featured-collection">
+        <div class="collection-header">
+            <div class="text">
+                <div class="title">
+                    {{ this.collection.title }}
+                </div>
+                <div class="description">
+                    {{ this.collection.description }}
+                </div>
+                <button class='secondary large'>See all items</button>
+            </div>
+            <div class="image">
+                {{ this.collection.featured_image | img_url: 'medium' | img_tag:this.collection.title }}
+            </div>
+        </div>
+        <div class="horizontal-cards-slider__container">
+            <div 
+                class="horizontal-cards-slider" 
+                data-flickity='{"pageDots": false, "autoPlay": 4500, "cellAlign": "left", "wrapAround": true }'>
+                {%- for product in this.collection.products limit:8 -%}
+                    {% render "card-horizontal", product:product %}
+                {%- endfor -%}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "smallmans-collection-v2",
+    "tag": "section",
+    "class": "smallmans",
+    "settings": [
+        {
+            "type": "collection",
+            "id": "collection",
+            "label": "Pick a collection"
+        }
+    ],
+    "presets": [{
+        "name": "Smallmans Featured Collection 2"
+    }]
+}
+{% endschema %}
