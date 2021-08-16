@@ -1,0 +1,27 @@
+.smallmans{
+    .page-404__container { 
+        margin: 64px auto;
+        width: 80%;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        &__text { 
+            padding: 2em;
+            .title {
+                font: var(--font-hero);
+            }
+            .description {
+                font: var(--font-p);
+                margin-bottom: 1em;
+            }
+        }
+        &__image {
+            img {
+                width: 100%;
+                object-fit: cover;
+                overflow: hidden;
+                border-radius: 8px;
+            }
+        }
+    }
+}

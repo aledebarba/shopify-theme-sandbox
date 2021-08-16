@@ -1153,7 +1153,6 @@ button[component="productcard"] {
   background-color: var(--theme-color--secondary);
   width: 80%;
   margin: 64px auto;
-  padding: 0 64px;
   -webkit-column-gap: 2em;
           column-gap: 2em;
   display: -ms-grid;
@@ -1163,6 +1162,7 @@ button[component="productcard"] {
 }
 
 .smallmans .call-to-action-v2__container .call-to-action-v2 .text {
+  padding-left: 64px;
   -ms-grid-row-align: center;
       align-self: center;
   display: -ms-grid;
@@ -1185,15 +1185,12 @@ button[component="productcard"] {
 .smallmans .call-to-action-v2__container .call-to-action-v2 .image {
   width: 100%;
   height: 100%;
-  padding: 0;
-  margin: 0;
-  border: 0;
   overflow: hidden;
 }
 
 .smallmans .call-to-action-v2__container .call-to-action-v2 .image img {
   width: 100%;
-  max-height: 480px;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border: 0;
@@ -1738,6 +1735,37 @@ button[component="productcard"] {
 
 .footer-container .ending .payments-cards svg {
   width: 32px;
+}
+
+.smallmans .page-404__container {
+  margin: 64px auto;
+  width: 80%;
+  overflow: hidden;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.smallmans .page-404__container__text {
+  padding: 2em;
+}
+
+.smallmans .page-404__container__text .title {
+  font: var(--font-hero);
+}
+
+.smallmans .page-404__container__text .description {
+  font: var(--font-p);
+  margin-bottom: 1em;
+}
+
+.smallmans .page-404__container__image img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 img.smallmans.header__logo {

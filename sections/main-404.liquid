@@ -1,23 +1,54 @@
-<style type="text/css">
-  .template-404 .title + * {
-    margin-top: 1rem;
-  }
+{%- assign this = section.settings -%}
 
-  @media screen and (min-width: 750px) {
-    .template-404 .title + * {
-      margin-top: 2rem;
-    }
-  }
-</style>
-
-<div class="template-404 page-width page-margin center smallmans">
-  <p>
-    {{ 'templates.404.subtext' | t }}
-  </p>
-  <h1 class="title">
-    {{ 'templates.404.title' | t }}
-  </h1>
-  <a href="{{ routes.all_products_collection_url }}" class="link body-large">
-    {{ 'general.continue_shopping' | t }}
-  </a>
+<div class="page-404__container">
+  <div class="page-404__container__text">
+    <div class="title">
+      {{ this.title }}
+    </div>
+    <div class="description">
+      {{ this.description }}
+    </div>
+    <a href="{{ this.link.url }}" class="button primary large">{{ this.button_text }}</a>
+  </div>
+  <div class="page-404__image">
+    {{ this.image | img_url: 'large'| img_tag: this.title }}
+  </div>
 </div>
+
+{% schema %}
+{
+  "name": "404-options",
+  "tag": "section",
+  "class": "smallmans",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Page Title",
+      "default": "PAGE NOT FOUND"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "label",
+      "default": "We could not found the page or resource you are looking for. Please try another URL or click a link on this page."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Continue Shopping"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Button URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Select a featured image for this page",
+    }
+  ]
+}
+{% endschema %}
