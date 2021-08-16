@@ -3,32 +3,43 @@
     <div class="footer-columns">
         <div class="about">
             <div class="logo">
-                {{ this.image | img_url: 'large' | img_tag:"company brand" }}
+                {{ this.logo | img_url: 'large' | img_tag:"company brand" }}
             </div>
             <div class="description">
                 {{ this.about }}
             </div>
         </div>
         <div class="menus">
-            {% if this.firstMenu %}
+            {% if this.firstMenu != "" %}
                 {% render 'smallmans-footer-menu', title:this.firstMenuTitle, menu:this.firstMenu %}
             {% endif %}
-            {% if this.secondtMenu %}
-                {% render 'smallmans-footer-menu', title:this.secondtMenuTitle, menu:this.secondtMenu %}
+            {% if this.secondtMenu  != "" %}
+                {% render 'smallmans-footer-menu', title:this.secondMenuTitle, menu:this.secondMenu %}
             {% endif %}
-            {% if this.thirdMenu %}
+            {% if this.thirdMenu  != "" %}
                 {% render 'smallmans-footer-menu', title:this.thirdMenuTitle, menu:this.thirdMenu %}
             {% endif %}
-            {% if this.fourthMenu %}
-                {% render 'smallmans-footer-menu', title:this.fourthMenuTitle, menu:this.fourthMenu %}
-            {% endif %}
+            {%- if this.showSocials == true -%}
+                {% render 'smallmans-show-socials' %}
+            {%- endif -%}
         </div>
     </div>
     <div class="ending">
         <div class="ending-text">
             {{ this.endingText }}
         </div>
-        <div class="cards"></div>
+        <div class="payments-cards">
+            <div class="footer__payment">
+                <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
+                <ul class="list list-payment" role="list">
+                  {%- for type in shop.enabled_payment_types -%}
+                    <li class="list-payment__item">
+                      {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </div>
+        </div>
     </div>
 </div>
 
@@ -64,7 +75,7 @@
             "type": "text",
             "id": "secondMenuTitle",
             "label": "Second menu title",
-            "default": "Quick navigation"
+            "default": "Quick navigation 2"
         },
         {
             "type": "link_list",
@@ -75,7 +86,7 @@
             "type": "text",
             "id": "thirdMenuTitle",
             "label": "Third menu title",
-            "default": "Quick navigation"
+            "default": "Quick navigation 3"
         },
         {
             "type": "link_list",
@@ -83,15 +94,10 @@
             "label": "Third Menu"
         },
         {
-            "type": "text",
-            "id": "fourthMenuTitle",
-            "label": "Fourth menu title",
-            "default": "Quick navigation"
-        },
-        {
-            "type": "link_list",
-            "id": "fourthMenu",
-            "label": "Fourth Menu"
+            "type": "checkbox",
+            "id": "showSocials",
+            "label": "Show Social Networks",
+            "default": true
         },
         {
             "type": "text",

@@ -176,24 +176,28 @@
       {
         "type": "text",
         "id": "social_twitter_link",
+        "default": "https://twitter.com/smallmans",
         "label": "t:settings_schema.social-media.settings.social_twitter_link.label",
         "info": "t:settings_schema.social-media.settings.social_twitter_link.info"
       },
       {
         "type": "text",
         "id": "social_facebook_link",
+        "default": "https://facebnook.com/smallmans",
         "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
         "info": "t:settings_schema.social-media.settings.social_facebook_link.info"
       },
       {
         "type": "text",
         "id": "social_pinterest_link",
+        "default": "https://pinterest.com/smallmans",
         "label": "t:settings_schema.social-media.settings.social_pinterest_link.label",
         "info": "t:settings_schema.social-media.settings.social_pinterest_link.info"
       },
       {
         "type": "text",
         "id": "social_instagram_link",
+        "default": "https:/instagram.com/smallmans",
         "label": "t:settings_schema.social-media.settings.social_instagram_link.label",
         "info": "t:settings_schema.social-media.settings.social_instagram_link.info"
       },
