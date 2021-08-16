@@ -1737,7 +1737,7 @@ button[component="productcard"] {
   width: 32px;
 }
 
-.smallmans .page-404__container {
+.smallmans .page-404-container {
   margin: 64px auto;
   width: 80%;
   overflow: hidden;
@@ -1745,22 +1745,27 @@ button[component="productcard"] {
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.smallmans .page-404__container__text {
+.smallmans .page-404-container .text-content {
   padding: 2em;
 }
 
-.smallmans .page-404__container__text .title {
+.smallmans .page-404-container .text-content .title {
+  color: var(--theme-blue);
   font: var(--font-hero);
 }
 
-.smallmans .page-404__container__text .description {
+.smallmans .page-404-container .text-content .description {
   font: var(--font-p);
+  color: var(--theme-gray);
   margin-bottom: 1em;
 }
 
-.smallmans .page-404__container__image img {
+.smallmans .page-404-container .image img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;

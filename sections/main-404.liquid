@@ -1,7 +1,7 @@
 {%- assign this = section.settings -%}
 
-<div class="page-404__container">
-  <div class="page-404__container__text">
+<div class="page-404-container">
+  <div class="text-content">
     <div class="title">
       {{ this.title }}
     </div>
@@ -10,7 +10,7 @@
     </div>
     <a href="{{ this.link.url }}" class="button primary large">{{ this.button_text }}</a>
   </div>
-  <div class="page-404__image">
+  <div class="image">
     {{ this.image | img_url: 'large'| img_tag: this.title }}
   </div>
 </div>
@@ -47,7 +47,7 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Select a featured image for this page",
+      "label": "Select a featured image for this page"
     }
   ]
 }

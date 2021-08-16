@@ -1,10 +1,17 @@
 {
   "sections": {
     "main": {
-      "type": "main-404"
+      "type": "main-404",
+      "settings": {
+        "title": "PAGE NOT FOUND",
+        "description": "We could not found the page or resource you are looking for. Please try another URL or click a link on this page.",
+        "button_text": "Continue Shopping",
+        "link": "shopify:\/\/collections\/all",
+        "image": "shopify:\/\/shop_images\/metal-shower-head.jpg"
+      }
     }
   },
   "order": [
     "main"
   ]
- }
+}

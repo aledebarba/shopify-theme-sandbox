@@ -91,12 +91,6 @@
           "showSocials": true,
           "endingText": "© Shopify Store Name \/ Privacy Policy \/ Cookies Management"
         }
-      },
-      "page-404": {
-        "type": "main-404",
-        "settings":{
-          "image": "shopify:\/\/shop_images\/smallmans-logo-white.png"
-        }
       }
     },
     "content_for_index": [

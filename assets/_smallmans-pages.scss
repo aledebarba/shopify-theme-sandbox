@@ -1,21 +1,24 @@
-.smallmans{
-    .page-404__container { 
+.smallmans {
+    .page-404-container { 
         margin: 64px auto;
         width: 80%;
         overflow: hidden;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        &__text { 
+        align-items: center;
+        .text-content { 
             padding: 2em;
             .title {
+                color: var(--theme-blue);
                 font: var(--font-hero);
             }
             .description {
                 font: var(--font-p);
+                color: var(--theme-gray);
                 margin-bottom: 1em;
             }
         }
-        &__image {
+        .image {
             img {
                 width: 100%;
                 object-fit: cover;

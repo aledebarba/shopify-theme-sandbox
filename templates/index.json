@@ -51,9 +51,11 @@
     "call-to-action-v2": {
       "type": "smallmans-calltoaction-v2",
       "settings": {
-        "title":"Check this collection",
-        "description":"Halvah croissant candy canes bonbon candy. Apple pie jelly beans topping carrot cake danish tart cake cheesecake.",
-        "buttontext":"Read more"
+        "image": "shopify:\/\/shop_images\/hand-washing-in-the-kitchen.jpg",
+        "title": "Check this collection",
+        "description": "Halvah croissant candy canes bonbon candy. Apple pie jelly beans topping carrot cake.",
+        "buttontext": "Read more about",
+        "link": "shopify:\/\/blogs\/news\/everything-is-about-well-being"
       }
     }
   },
